@@ -46,22 +46,21 @@
     color: red;
   }
 
-  /* Master NavBar CSS */
+/* Master NavBar CSS */
 .logo {
     max-height: 90px;
     max-width: 50px;
     background-color: transparent;
   }
-
+  
   nav.navbar {
-    background-color: #121212;
+    background-color: #010819;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 9999;
-    padding: 10px;
   }
-
+  
   nav.navbar .navbar-nav .nav-link.navbar-link {
     font-weight: 400;
     color: #CAE9F5 !important;
@@ -80,12 +79,56 @@
     display: flex;
     align-items: center;
   }
-
-  .log-out {
-    justify-content: right;
+  
+  .socials {
+    display: flex;
+    margin-left: 14px;
+    margin-top: 10px;
   }
   
-  .log-out button {
+  .socials a {
+    width: 42px;
+    height: 42px;
+    background: rgba(217,217,217,0.1);
+    display: inline-flex;
+    border-radius: 50%;
+    margin-right: 6px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+  
+  .socials a::before {
+    content: "";
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    background-color: #CAE9F5;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .socials a:hover::before {
+    transform: scale(1);
+  }
+  
+  .socials a img {
+    width: 60%;
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .socials a:hover img {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(8%) saturate(96%) hue-rotate(350deg) brightness(95%) contrast(85%);
+  }
+  
+  .contact-me {
+    display: inline-flex;
+  }
+  
+  .contact-me button {
     font-weight: 700;
     border: 1px solid #CAE9F5;
     color: #CAE9F5;
@@ -97,11 +140,11 @@
    transition: 0.5s ease-in-out;
   }
   
-  .log-out button span {
+  .contact-me button span {
     z-index: 1;
   }
   
-  .log-out button::before {
+  .contact-me button::before {
     content: "";
     width: 0%;
     height: 100%;
@@ -112,12 +155,16 @@
     z-index: -1;
     transition: 0.5s ease-in-out;
   }
-  .log-out button span:hover {
+  .contact-me button span:hover {
     color: #121212;
   }
-  .log-out button:hover::before {
+  .contact-me button:hover::before {
    content: "";
    width: 100%;
    height: 100%;
    position: absolute;
+  }
+    
+  .talk {
+    text-decoration: none;
   }
