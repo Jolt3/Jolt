@@ -52,25 +52,28 @@ const AccountBalanceChart = ({ timeInterval }) => {
                     x: {
                         type: 'number',
                         easing: 'linear',
-                        duration: 3000 / data.length,
+                        duration: 3000 / data.datasets[0].data.length,
+                        from: null,
+                        to: balance[-1],
                         delay(ctx) {
                             if (ctx.type !== 'data' || ctx.xStarted) {
                                 return 0;
                             }
                             ctx.xStarted = true;
-                            return ctx.index * 3000 / data.length;
+                            return ctx.index * 3000 / data.datasets[0].data.length;
                         },
+                        
                     },
                     y: {
                         type: 'number',
                         easing: 'linear',
-                        duration: 3000 / data.length,
+                        duration: 3000 / data.datasets[0].data.length,
                         delay(ctx) {
                             if (ctx.type !== 'data' || ctx.yStarted) {
                                 return 0;
                             }
                             ctx.yStarted = true;
-                            return ctx.index * 3000 / data.length;
+                            return ctx.index * 3000 / data.datasets[0].data.length;
                         },
                     },
                 },
@@ -121,7 +124,7 @@ const AccountBalanceChart = ({ timeInterval }) => {
         if (selectedInterval === '1 Month') {
             const currentDate = new Date();
             const pastDate = new Date();
-            pastDate.setDate(currentDate.getDate() - 30 );
+            pastDate.setDate(currentDate.getDate() - 30);
             setCurrentInterval({
                 label: 'Last 30 Days',
                 startDate: pastDate,
@@ -133,7 +136,7 @@ const AccountBalanceChart = ({ timeInterval }) => {
     };
 
     return (
-        <div style={{ marginTop: '200px' }}>
+        <div style={{ marginTop: '25px', marginLeft: '250px' }}>
             <div style={{ display: 'flex', width: '50%', justifyContent: 'space-between' }}>
                 <button onClick={() => setCurrentInterval('1 Month')}>1 Month</button>
                 <button onClick={() => setCurrentInterval('3 Months')}>3 Months</button>
