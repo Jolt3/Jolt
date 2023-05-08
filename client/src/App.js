@@ -3,8 +3,7 @@ import '../src/App.css';
 import {Navigation} from '../src/components/Navigation';
 import {Header} from '../src/components/Header';
 import Data from '../src/assets/data/mock-data.json';
-import AccountBalanceChart from './components/ChartComponent';
-
+import AccountBalanceChart from './ChartComponent';
 function App() {
     return (
       <div className="App">
