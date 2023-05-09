@@ -1,0 +1,29 @@
+.progress {
+    background-color: gray;
+    border-radius: 20px;
+    height: 30px;
+    width: 300px;
+}
+
+.progress-done {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: repeating-linear-gradient(
+        to left,
+        #800000,
+        #FF4500,
+        #FF0000,
+    );
+    box-shadow: 0 5px 5px -6px #800000;
+    border-radius: 20px;
+    color: #fff;
+    height: 100%;
+    width: 0;
+    transition: 1s ease 0.3s;
+}
+.inputContainer {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
