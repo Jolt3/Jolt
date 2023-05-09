@@ -5,6 +5,7 @@ import {Header} from '../src/components/Header';
 import Data from '../src/assets/data/mock-data.json';
 // import {Login} from './components/Login-Spinner';
 import {Dashboard} from './components/Dashboard';
+// import {Goals} from './components/Goals';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
         <Header placeholder='Search Here' data={Data}/>
         {/* <Login /> */}
         <Dashboard />
+        {/* <Goals /> */}
       </div>
     );
   }

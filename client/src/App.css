@@ -559,3 +559,47 @@ h4 {
   margin-left: 10%;
   margin-bottom: 10%;
 }
+
+/* Goals CSS */
+
+.goal-master {
+  width: 89%;
+  height: 90%;
+  min-height: 90%;
+  margin-left: 11%;
+  /* background-color: blue; */
+}
+
+.goal-main {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.goal-left {
+  background-color: #6ec0e4;
+  width: 40%;
+  height: 90%;
+  padding-bottom: 51%;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.goal-right {
+  width: 60%;
+  height: 100%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.goalThree {
+  width: 100%;
+  height: 40%;
+  background-color: #6ec0e4;
+  margin-bottom: 3%;
+  padding-bottom: 24%;
+}
