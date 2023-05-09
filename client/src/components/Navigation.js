@@ -36,7 +36,6 @@ export const Navigation = () => {
                 <span className='nav-text'>Budgeting</span>
                 <a href='#section'><img src={expenses} alt="Expenses" /></a>
                 <span className='nav-text'>Expenses</span>
-                <button className='test'>TEST</button>
             </div>
         </div>
     )
