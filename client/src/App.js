@@ -92,9 +92,14 @@ function App() {
         <Navigation />
         <Header placeholder='Search Here' data={Data}/>
         {/* <Login /> */}
+<<<<<<< HEAD
         {/* <Dashboard /> */}
         {/* <Goals /> */}
         <GoalList />
+=======
+        <Dashboard />
+        {/* <Goals /> */}
+>>>>>>> fa0f7cf918836571a5ef05739a9c816aae7883e1
       </div>
     );
   }
