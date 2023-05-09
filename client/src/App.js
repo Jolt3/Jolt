@@ -8,7 +8,7 @@ import {Dashboard} from './components/Dashboard';
 // import {Goals} from './components/Goals';
 import React, {useEffect, useContext, useCallback} from 'react';
 import Context from './components/Context';
-import GoalList from './components/Goals/GoalList';
+import GoalList from './components/Goal/GoalList';
 
 function App() {
   const { linkSuccess, isItemAccess, isPaymentInitiation, dispatch } = useContext(Context);

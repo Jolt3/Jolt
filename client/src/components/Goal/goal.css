@@ -1,5 +1,5 @@
 .progress {
-    background-color: gray;
+    background-color: lightgray;
     border-radius: 20px;
     height: 30px;
     width: 300px;
@@ -13,7 +13,7 @@
         to left,
         #800000,
         #FF4500,
-        #FF0000,
+        #FF0000
     );
     box-shadow: 0 5px 5px -6px #800000;
     border-radius: 20px;
@@ -21,7 +21,9 @@
     height: 100%;
     width: 0;
     transition: 1s ease 0.3s;
+    z-index: 1;
 }
+
 .inputContainer {
     display: flex;
     width: 50%;
