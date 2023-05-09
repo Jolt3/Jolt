@@ -5,9 +5,9 @@ import {Header} from '../src/components/Header';
 import Data from '../src/assets/data/mock-data.json';
 // import {Login} from './components/Login-Spinner';
 import {Dashboard} from './components/Dashboard';
-import React, { useEffect, useContext, useCallback } from "react";
-import Context from './components/Context'
-
+// import {Goals} from './components/Goals';
+import React, {useEffect, useContext, useCallback} from 'react';
+import Context from './components/Context';
 
 function App() {
   const { linkSuccess, isItemAccess, isPaymentInitiation, dispatch } = useContext(Context);
@@ -92,6 +92,7 @@ function App() {
         <Header placeholder='Search Here' data={Data}/>
         {/* <Login /> */}
         <Dashboard />
+        {/* <Goals /> */}
       </div>
     );
   }
