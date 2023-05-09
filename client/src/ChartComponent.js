@@ -3,7 +3,7 @@ import { Chart } from 'chart.js/auto'; // Imports necessary modules
 
 // Assigns numerical values for each option representing how many months are in each option
 const intervals = {
-    '1 Month': 30,
+    '1 Month': 1,
     '3 Months': 3,
     '6 Months': 6,
     '1 Year': 12,
@@ -17,34 +17,39 @@ const AccountBalanceChart = () => {
 
     useEffect(() => {
         // Gets the user balance as well as a min and max vaule
-        let balance = [100, 120, 80, 200, 150, 300, 250, 400, 350, 500, 450, 600, 614, 151, 295, 482, 741, 651, 985, 351, 542,]; // Add User account balances
+        let balance = [100, 120, 80, 200, 150, 300, 250, 400, 350, 500, 450, 600]; // Add User account balances
         // Defines months as whichever interval is selected
         let months = intervals[currentInterval];
 
         // Assigns the labels to a formatted date based on whichever time interval is selected
         let labels = [];
-        for (let i = 0; i < months; i++) {
-            if (months === '1 Month') {
+        if (months === 1) {
+            for (let i = 0; i <= months; i++) {
                 const date = new Date();
-                date.setMonth(date.getMonth() - (months - i - 1));
+                date.setDate(date.getDate() - (months - i - 1) * 30);
                 const formattedDate = formatDate(date);
                 labels.push(formattedDate);
+
                 function formatDate(date) {
                     const month = date.toLocaleString('en-US', { month: 'short' });
                     const day = date.toLocaleString('en-US', { day: 'numeric' });
                     return `${month} ${day}`
                 }
+                labels.reverse();
             }
+        } else {
+            for (let i = 0; i < months; i++) {
+                const date = new Date();
+                date.setMonth(date.getMonth() - (months - i - 1));
+                const formattedDate = formatDate(date);
+                labels.push(formattedDate);
 
-            const date = new Date();
-            date.setMonth(date.getMonth() - (months - i - 1));
-            const formattedDate = formatDate(date);
-            labels.push(formattedDate);
-        }
-        function formatDate(date) {
-            const month = date.toLocaleString('en-US', { month: 'short' });
-            const year = date.toLocaleString('en-US', { year: '2-digit' });
-            return `${month} ${year}`
+                function formatDate(date) {
+                    const month = date.toLocaleString('en-US', { month: 'short' });
+                    const year = date.toLocaleString('en-US', { year: '2-digit' });
+                    return `${month} ${year}`
+                }
+            }
         }
         console.log(labels);
 
@@ -73,27 +78,27 @@ const AccountBalanceChart = () => {
                     x: {
                         type: 'number',
                         easing: 'linear',
-                        duration: 350 / data.datasets[0].data.length,
+                        duration: 550 / data.datasets[0].data.length,
                         from: NaN,
                         delay(ctx) {
                             if (ctx.type !== 'data' || ctx.xStarted) {
                                 return 0;
                             }
                             ctx.xStarted = true;
-                            return ctx.index * 350 / data.datasets[0].data.length;
+                            return ctx.index * 550 / data.datasets[0].data.length;
                         },
 
                     },
                     y: {
                         type: 'number',
                         easing: 'linear',
-                        duration: 350 / data.datasets[0].data.length,
+                        duration: 550 / data.datasets[0].data.length,
                         delay(ctx) {
                             if (ctx.type !== 'data' || ctx.yStarted) {
                                 return 0;
                             }
                             ctx.yStarted = true;
-                            return ctx.index * 350 / data.datasets[0].data.length;
+                            return ctx.index * 550 / data.datasets[0].data.length;
                         },
                     },
                 },
@@ -138,12 +143,6 @@ const AccountBalanceChart = () => {
             return () => chart.destroy();
         }
     }, [currentInterval]);
-
-    const handleIntervalChange = (event) => {
-        const selectedInterval = event.target.value;
-        setCurrentInterval(intervals[selectedInterval])
-
-    };
 
     return (
         <div style={{ marginTop: '25px', marginLeft: '250px' }}>

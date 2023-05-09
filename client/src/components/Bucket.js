@@ -29,11 +29,16 @@ const DoughnutChart = () => {
     const [buckets, setBuckets] = useState([
         { name: 'Core', amount: 2000 }, // Add User account balance
     ]);
-
     const [newBucketName, setNewBucketName] = useState('');
     const [newBucketAmount, setNewBucketAmount] = useState(0);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [showAddBucket, setShowAddBucket] = useState(false);
 
     const addBucket = () => {
+        if (newBucketAmount > buckets[0].amount) {
+            setErrorMessage('Insufficient Funds');
+            return
+        }
         // Creates a new core amount formula by subtracting however much we are adding to the new bucket from the core and stores it in the variable
         const newCoreAmount = buckets[0].amount - newBucketAmount;
         const newBucket = { name: newBucketName, amount: newBucketAmount };
@@ -46,6 +51,7 @@ const DoughnutChart = () => {
         // Resets the input fields
         setNewBucketName('');
         setNewBucketAmount(0);
+        setErrorMessage('')
     };
 
     // Removes a bucket function
@@ -91,8 +97,12 @@ const DoughnutChart = () => {
         ],
     };
 
+    const toggleAddBucket = () => {
+        setShowAddBucket(!showAddBucket)
+    }
     return (
         <div style={{ marginTop: '25px', marginLeft: '250px' }}>
+            {errorMessage && <p>{errorMessage}</p>}
             <div style={{ display: 'flex', width: '25%' }}>
                 <Doughnut style={{ width: '100%', height: '200px' }} data={data} options={options} />
             </div>
@@ -103,21 +113,27 @@ const DoughnutChart = () => {
                         <button onClick={() => removeBucket(index + 1)}>Remove Bucket</button>
                     </div>
                 ))}
-                <div>
-                    <input
-                        type="text"
-                        value={newBucketName}
-                        onChange={(e) => setNewBucketName(e.target.value)}
-                        placeholder="Bucket Name"
-                    />
-                    <input
-                        type="number"
-                        value={newBucketAmount}
-                        onChange={(e) => setNewBucketAmount(Number(e.target.value))}
-                        placeholder="Amount to Add"
-                    />
-                    <button onClick={addBucket}>Add Bucket</button>
-                </div>
+                {!showAddBucket && (
+                    <button onClick={toggleAddBucket}>Add Bucket</button>
+                )}
+                {showAddBucket && (
+                    <div>
+                        <input
+                            type="text"
+                            value={newBucketName}
+                            onChange={(e) => setNewBucketName(e.target.value)}
+                            placeholder="Bucket Name"
+                        />
+                        <input
+                            type="number"
+                            value={newBucketAmount}
+                            onChange={(e) => setNewBucketAmount(Number(e.target.value))}
+                            placeholder="Amount to Add"
+                        />
+                        <button onClick={addBucket}>Confirm</button>
+                        <button onClick={toggleAddBucket}>Cancel</button>
+                    </div>
+                )}
             </div>
         </div>
     )
