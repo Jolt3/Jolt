@@ -91,9 +91,10 @@ function App() {
         <Navigation />
         <Header placeholder='Search Here' data={Data}/>
         {/* <Login /> */}
-        {/* <Dashboard /> */}
+        <Dashboard />
       </div>
     );
   }
   
   export default App;
+  
