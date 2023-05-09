@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from './Link';
 // import search from '../assets/img/icons8-search-50.png';
 
 // <a target="_blank" href="https://icons8.com/icon/7695/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
@@ -34,6 +35,7 @@ export const Header = ({placeholder, data}) => {
                 })}
             </div>
             )}
+              <Link />
             <div>
                 <h1>Welcome back, *First Name*</h1>
             </div>
@@ -42,6 +44,7 @@ export const Header = ({placeholder, data}) => {
                     <span className='top'>Log Out</span>
                 </button>
             </div>
+          
         </div>
     )
 }
