@@ -8,6 +8,7 @@ import {Dashboard} from './components/Dashboard';
 // import {Goals} from './components/Goals';
 import React, {useEffect, useContext, useCallback} from 'react';
 import Context from './components/Context';
+import GoalList from './components/Goal/GoalList';
 
 function App() {
   const { linkSuccess, isItemAccess, isPaymentInitiation, dispatch } = useContext(Context);
@@ -91,10 +92,17 @@ function App() {
         <Navigation />
         <Header placeholder='Search Here' data={Data}/>
         {/* <Login /> */}
+<<<<<<< HEAD
+        {/* <Dashboard /> */}
+        {/* <Goals /> */}
+        <GoalList />
+=======
         <Dashboard />
         {/* <Goals /> */}
+>>>>>>> fa0f7cf918836571a5ef05739a9c816aae7883e1
       </div>
     );
   }
   
   export default App;
+  
