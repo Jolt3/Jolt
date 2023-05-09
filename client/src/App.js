@@ -5,13 +5,9 @@ import {Header} from '../src/components/Header';
 import Data from '../src/assets/data/mock-data.json';
 // import {Login} from './components/Login-Spinner';
 import {Dashboard} from './components/Dashboard';
-<<<<<<< HEAD
 // import {Goals} from './components/Goals';
-=======
-import React, { useEffect, useContext, useCallback } from "react";
-import Context from './components/Context'
-
->>>>>>> 25d876948f50bd2bf57da42309f8183b63b68f9e
+import React, {useEffect, useContext, useCallback} from 'react';
+import Context from './components/Context';
 
 function App() {
   const { linkSuccess, isItemAccess, isPaymentInitiation, dispatch } = useContext(Context);
