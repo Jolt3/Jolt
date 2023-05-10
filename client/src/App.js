@@ -3,7 +3,6 @@ import '../src/App.css';
 import {Navigation} from '../src/components/Navigation';
 import {Header} from '../src/components/Header';
 import Data from '../src/assets/data/mock-data.json';
-import {Login} from './components/Login-Spinner';
 import {Dashboard} from './components/Dashboard';
 import {Goals} from './components/Goals';
 import React, {useEffect, useContext, useCallback} from 'react';
@@ -91,11 +90,10 @@ function App() {
 
     return (
       <div className="App">
-        <Start />
-        {/* <Navigation /> */}
-        {/* <Header placeholder='Search Here' data={Data}/> */}
-        {/* <Login /> */}
-        {/* <Dashboard /> */}
+        {/* <Start /> */}
+        <Navigation />
+        <Header placeholder='Search Here' data={Data}/>
+        <Dashboard />
         {/* <Goals /> */}
         {/* <Budgeting /> */}
         {/* <Expenses /> */}
