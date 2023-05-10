@@ -5,15 +5,15 @@ import { GoalsJr } from './GoalsJr';
 export const Goals = () => {
     const items = [
         {
-            title: "Placeholder",
+            title: "Goals-Placeholder",
             description: "This is a test",
         },
         {
-            title: "Placeholder",
+            title: "Goals-Placeholder",
             description: "This is a test",
         },
         {
-            title: "Placeholder",
+            title: "Goals-Placeholder",
             description: "This is a test",
         }
     ];

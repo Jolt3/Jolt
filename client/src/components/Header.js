@@ -24,7 +24,7 @@ export const Header = ({placeholder, data}) => {
                 <input type='text' placeholder={placeholder} onChange={handleFilter}/>
                 {/* <div className='searchIcon'></div> */}
             </div>
-            {filteredData.length !== 0 && (
+            {/* {filteredData.length !== 0 && (
             <div className='dataResult'>
                 {filteredData.slice(0, 1).map((value, key) => {
                     return (
@@ -35,9 +35,9 @@ export const Header = ({placeholder, data}) => {
                 })}
             </div>
             )}
-              <Link />
+              <Link /> */}
             <div>
-                <h1>Welcome back, *First Name*</h1>
+                <h1 className='header-head'>Welcome back, *First Name*</h1>
             </div>
             <div className='log-out'>
                 <button>
