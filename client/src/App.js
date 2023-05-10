@@ -3,11 +3,14 @@ import '../src/App.css';
 import {Navigation} from '../src/components/Navigation';
 import {Header} from '../src/components/Header';
 import Data from '../src/assets/data/mock-data.json';
-// import {Login} from './components/Login-Spinner';
+import {Login} from './components/Login-Spinner';
 import {Dashboard} from './components/Dashboard';
-// import {Goals} from './components/Goals';
+import {Goals} from './components/Goals';
 import React, {useEffect, useContext, useCallback} from 'react';
 import Context from './components/Context';
+import {Budgeting} from './components/Budgeting';
+import {Expenses} from './components/Expenses';
+import {Start} from './components/Login';
 import GoalList from './components/Goal/GoalList';
 
 function App() {
@@ -89,17 +92,19 @@ function App() {
 
     return (
       <div className="App">
-        <Navigation />
-        <Header placeholder='Search Here' data={Data}/>
+        <Start />
+        {/* <Navigation /> */}
+        {/* <Header placeholder='Search Here' data={Data}/> */}
         {/* <Login /> */}
-<<<<<<< HEAD
+        {/* <Dashboard /> */}
+        {/* <Goals /> */}
+        {/* <Budgeting /> */}
+        {/* <Expenses /> */}
         {/* <Dashboard /> */}
         {/* <Goals /> */}
         <GoalList />
-=======
         <Dashboard />
         {/* <Goals /> */}
->>>>>>> fa0f7cf918836571a5ef05739a9c816aae7883e1
       </div>
     );
   }
