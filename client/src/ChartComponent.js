@@ -1,6 +1,7 @@
 import { React, useRef, useEffect, useState } from 'react'; // Imports react
 import { Chart } from 'chart.js/auto'; // Imports necessary modules
 
+// Assigns numerical values for each option representing how many months are in each option
 const intervals = {
     '1 Month': 1,
     '3 Months': 3,
@@ -8,23 +9,48 @@ const intervals = {
     '1 Year': 12,
 };
 
-const AccountBalanceChart = ({ timeInterval }) => {
+const AccountBalanceChart = () => {
+
     const chartRef = useRef(null);
+    // Renders the page with the 1 month option selected
     const [currentInterval, setCurrentInterval] = useState('1 Month');
 
     useEffect(() => {
         // Gets the user balance as well as a min and max vaule
-        let balance = [100, 120, 80, 200, 150, 300, 250, 400, 350, 500, 450, 600];
-        let minBalance = Math.min(...balance);
-        let maxBalance = Math.max(...balance);
-
+        let balance = [100, 120, 80, 200, 150, 300, 250, 400, 350, 500, 450, 600]; // Add User account balances
+        // Defines months as whichever interval is selected
         let months = intervals[currentInterval];
 
-        let labels = Array.from({ length: months }, (_, i) => {
-            const date = new Date();
-            date.setMonth(date.getMonth() - (months - i - 1));
-            return new Intl.DateTimeFormat('en-US', { month: 'short', year: '2-digit' }).format(date);
-        });
+        // Assigns the labels to a formatted date based on whichever time interval is selected
+        let labels = [];
+        if (months === 1) {
+            for (let i = 0; i <= months; i++) {
+                const date = new Date();
+                date.setDate(date.getDate() - (months - i - 1) * 30);
+                const formattedDate = formatDate(date);
+                labels.push(formattedDate);
+
+                function formatDate(date) {
+                    const month = date.toLocaleString('en-US', { month: 'short' });
+                    const day = date.toLocaleString('en-US', { day: 'numeric' });
+                    return `${month} ${day}`
+                }
+                labels.reverse();
+            }
+        } else {
+            for (let i = 0; i < months; i++) {
+                const date = new Date();
+                date.setMonth(date.getMonth() - (months - i - 1));
+                const formattedDate = formatDate(date);
+                labels.push(formattedDate);
+
+                function formatDate(date) {
+                    const month = date.toLocaleString('en-US', { month: 'short' });
+                    const year = date.toLocaleString('en-US', { year: '2-digit' });
+                    return `${month} ${year}`
+                }
+            }
+        }
         console.log(labels);
 
 
@@ -52,28 +78,27 @@ const AccountBalanceChart = ({ timeInterval }) => {
                     x: {
                         type: 'number',
                         easing: 'linear',
-                        duration: 3000 / data.datasets[0].data.length,
-                        from: null,
-                        to: balance[-1],
+                        duration: 550 / data.datasets[0].data.length,
+                        from: NaN,
                         delay(ctx) {
                             if (ctx.type !== 'data' || ctx.xStarted) {
                                 return 0;
                             }
                             ctx.xStarted = true;
-                            return ctx.index * 3000 / data.datasets[0].data.length;
+                            return ctx.index * 550 / data.datasets[0].data.length;
                         },
-                        
+
                     },
                     y: {
                         type: 'number',
                         easing: 'linear',
-                        duration: 3000 / data.datasets[0].data.length,
+                        duration: 550 / data.datasets[0].data.length,
                         delay(ctx) {
                             if (ctx.type !== 'data' || ctx.yStarted) {
                                 return 0;
                             }
                             ctx.yStarted = true;
-                            return ctx.index * 3000 / data.datasets[0].data.length;
+                            return ctx.index * 550 / data.datasets[0].data.length;
                         },
                     },
                 },
@@ -96,8 +121,6 @@ const AccountBalanceChart = ({ timeInterval }) => {
                             text: 'Account Balance',
                             type: 'linear',
                         },
-                        suggestedMin: minBalance,
-                        suggestedMax: maxBalance,
                     },
                 },
                 plugins: {
@@ -112,28 +135,14 @@ const AccountBalanceChart = ({ timeInterval }) => {
             },
         };
 
+        // For switching between chart time intervals
         if (chartRef && chartRef.current) {
+            // Creates a chart for the time interval you have selected
             const chart = new Chart(chartRef.current, config);
+            // Destroys the previous chart time interval you had selected
             return () => chart.destroy();
         }
     }, [currentInterval]);
-
-    const handleIntervalChange = (event) => {
-        const selectedInterval = event.target.value;
-
-        if (selectedInterval === '1 Month') {
-            const currentDate = new Date();
-            const pastDate = new Date();
-            pastDate.setDate(currentDate.getDate() - 30);
-            setCurrentInterval({
-                label: 'Last 30 Days',
-                startDate: pastDate,
-                endDate: currentDate,
-            });
-        } else {
-            setCurrentInterval(intervals[selectedInterval])
-        }
-    };
 
     return (
         <div style={{ marginTop: '25px', marginLeft: '250px' }}>

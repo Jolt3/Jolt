@@ -11,6 +11,7 @@ import Context from './components/Context';
 import {Budgeting} from './components/Budgeting';
 import {Expenses} from './components/Expenses';
 import {Start} from './components/Login';
+import GoalList from './components/Goal/GoalList';
 
 function App() {
   const { linkSuccess, isItemAccess, isPaymentInitiation, dispatch } = useContext(Context);
@@ -99,6 +100,11 @@ function App() {
         {/* <Goals /> */}
         {/* <Budgeting /> */}
         {/* <Expenses /> */}
+        {/* <Dashboard /> */}
+        {/* <Goals /> */}
+        <GoalList />
+        <Dashboard />
+        {/* <Goals /> */}
       </div>
     );
   }
