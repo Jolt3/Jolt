@@ -11,21 +11,15 @@
     justify-content: center;
     background-image: repeating-linear-gradient(
         to left,
-        #800000,
-        #FF4500,
-        #FF0000
+        #FFEB00,
+        #FFEBA7,
+        #FFC700
     );
-    box-shadow: 0 5px 5px -6px #800000;
+    box-shadow: 0 5px 5px -6px #FFEBA7;
     border-radius: 20px;
     color: #fff;
     height: 100%;
     width: 0;
     transition: 1s ease 0.3s;
     z-index: 1;
-}
-
-.inputContainer {
-    display: flex;
-    width: 50%;
-    justify-content: space-evenly;
 }

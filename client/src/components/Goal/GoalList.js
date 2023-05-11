@@ -1,48 +1,47 @@
-import React, { useState, useRef, useEffect } from "react";
-import './goal.css'
+import React, { useState } from "react";
+import ProgressBar from "./ProgressBar";
+import GoalForm from "./GoalForm";
+
 
 const GoalList = () => {
-    const [finalValue, setFinalValue] = useState(0);
-    const [max, setMax] = useState(0);
-    const progressRef = useRef(null);
+    const [goals, setGoals] = useState([]);
 
-    useEffect(() => {
-        const progress = progressRef.current;
-        if (progress) {
-        progress.style.width = `${(finalValue / max) * 100}%`;
-        progress.innerText = `${Math.ceil((finalValue / max) * 100)}%`;
-        }
-    }, [finalValue, max])
+    const handleGoalSave = (goal) => {
+        setGoals((prevGoals) => [...prevGoals, goal]);
+    };
 
-    const handleInputChange = (e) => {
-        setFinalValue(parseInt(e.target.value, 10));
-    }
+    const removeGoal = (index) => {
+            const updatedGoals = [...goals]
+            updatedGoals.splice(index, 1);
+            setGoals(updatedGoals)
+    };
 
-    const handleMaxInputChange = (e) => {
-        setMax(parseInt(e.target.value, 10));
-    }
+    // const addFunds = (index)
 
     return (
         <div style={{ marginTop: '25px', marginLeft: '250px' }}>
-            <div className="progress">
-                <div ref={progressRef} className="progress-done"></div>
-            </div>
+            <GoalForm onSave={handleGoalSave} />
 
-            <div className="inputContainer">
+            {goals.length > 0 ? (
                 <div>
-                    <h3>Enter ammount</h3>
-                    <input className="input" type="number" onChange={handleInputChange} />
+                    <h2>Saved Goals</h2>
+                    <ul>
+                        {goals.map((goal, index) => (
+                            <li key={index}>
+                                <h3>{goal.name}</h3>
+                                <ProgressBar value={goal.amount} max={goal.max}/>
+                                <p>{`$${goal.amount} / $${goal.max}`}</p>
+                                <button onClick={() => removeGoal(index)}>Remove Goal</button>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-            </div>
-
-            <div className="inputContainer">
-                <div>
-                    <h3>Target Amount</h3>
-                    <input className="goal" type="number" onChange={handleMaxInputChange} />
-                </div>
-            </div>
+            ) : (
+                <p>Save a goal!</p>
+            )}
         </div>
-    )
-}
+    );
+};
+
 
 export default GoalList
