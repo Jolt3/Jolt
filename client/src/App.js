@@ -94,7 +94,8 @@ function App() {
         {/* <Start /> */}
         <Navigation />
         <Header placeholder='Search Here' data={Data}/>
-        <Dashboard />
+        {/* <Dashboard /> */}
+        <GoalList />
         {/* <Goals /> */}
         {/* <Budgeting /> */}
         {/* <Expenses /> */}

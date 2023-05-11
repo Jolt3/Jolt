@@ -5,18 +5,31 @@ import GoalForm from "./GoalForm";
 
 const GoalList = () => {
     const [goals, setGoals] = useState([]);
+        const [showAddFundsForm, setShowAddFundsForm] = useState(-1);
+        const [fundsToAdd, setFundsToAdd] = useState(0);
 
     const handleGoalSave = (goal) => {
         setGoals((prevGoals) => [...prevGoals, goal]);
     };
 
     const removeGoal = (index) => {
-            const updatedGoals = [...goals]
-            updatedGoals.splice(index, 1);
-            setGoals(updatedGoals)
+        const updatedGoals = [...goals]
+        updatedGoals.splice(index, 1);
+        setGoals(updatedGoals)
     };
 
-    // const addFunds = (index)
+    const addFunds = (index) => {
+        setShowAddFundsForm(index)
+    }
+
+    const handleFundsFormSubmit = (e, index) => {
+        e.preventDefault();
+        const updatedGoals = [...goals];
+        updatedGoals[index].amount += parseFloat(fundsToAdd);
+        setGoals(updatedGoals);
+        setShowAddFundsForm(-1);
+        setFundsToAdd(0);
+      };
 
     return (
         <div style={{ marginTop: '25px', marginLeft: '250px' }}>
@@ -29,9 +42,21 @@ const GoalList = () => {
                         {goals.map((goal, index) => (
                             <li key={index}>
                                 <h3>{goal.name}</h3>
-                                <ProgressBar value={goal.amount} max={goal.max}/>
+                                <ProgressBar value={goal.amount} max={goal.max} />
                                 <p>{`$${goal.amount} / $${goal.max}`}</p>
                                 <button onClick={() => removeGoal(index)}>Remove Goal</button>
+                                <button onClick={() => addFunds(index)}>Add Funds</button>
+                                {showAddFundsForm === index && (
+                                    <form onSubmit={(e) => handleFundsFormSubmit(e, index)}>
+                                        <input
+                                        type="number"
+                                        placeholder="Enter funds to add"
+                                        value={fundsToAdd}
+                                        onChange={(e) => setFundsToAdd(e.target.value)}
+                                        />
+                                        <button type="submit">Add</button>
+                                    </form>
+                                )}
                             </li>
                         ))}
                     </ul>
