@@ -52,6 +52,7 @@
  .sidenav {
     height: 100%;
     width: 11%;
+    max-width: 170px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -83,8 +84,8 @@
 
   .navigate {
     /* display: flex; */
-    margin-left: 12px;
-    margin-top: 20px;
+    margin-left: 6%;
+    margin-top: 15%;
   }
   
   .navigate a {
@@ -129,6 +130,7 @@
   
 .nav-text {
   color: #fff;
+  font-size: 15px;
   /* margin-bottom: 55px; */
 }
 
@@ -142,19 +144,21 @@
   width: 10rem;
   padding-left: 10px; */
   position: fixed;
-  margin-left: 140px;
-  display: inline-flex;
+  margin-left: 11%;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   position: relative;
   background-color: #6ec0e4;
-  width: 100%;
+  width: 89%;
   height: 10%;
 }
 
 .searchInputs {
-  display: flex;
-  position: relative;
+  position: static;
+  width: 40%;
+  margin-left: 3%;
+  margin-right: 20%;
 }
 
 .search input {
@@ -163,10 +167,10 @@
   border-radius: 2px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  font-size: 18px;
-  padding: 15px;
-  height: 30px;
-  width: 600px;
+  font-size: 16px;
+  padding: 1%;
+  /* height: 1%; */
+  width: 100%;
 }
 /* 
 .searchIcon {
@@ -224,10 +228,20 @@ a:hover {
 margin-top: 25px;
 } */
 
-h1 {
+/* h1 {
   font-size: 18px;
   width: 500px;
   margin-left: 230px;
+} */
+
+.header-head {
+  position: relative;
+  font-size: 18px;
+  width: 100%;
+}
+
+.log-out {
+  margin-left: 3%;
 }
 
 .log-out button {
@@ -236,9 +250,8 @@ h1 {
   color: #121212;
   padding: 18px 34px;
   font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: -200px;
+  margin-top: 8%;
+  margin-bottom: 8%;
  position: relative;
  background-color: whitesmoke;
  transition: 0.5s ease-in-out;
@@ -268,19 +281,103 @@ h1 {
  position: absolute;
 }
 
-.test {
+/* .test {
   margin-top: 30px;
   margin-left: 40px;
+} */
+
+/* Start/Login CSS */
+.start-master {
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 10%;
+  display: flex;
+  /* background-image: url('./assets/img/LoginWallpaper.jpg');
+  opacity: .8; */
+}
+
+.start-master-bg {
+  width: 100vh;
+  height: 100vh;
+  opacity: .9;
+}
+
+.start-left {
+  position: relative;
+  width: 45%;
+  height: 100vh;
+}
+
+.start-head {
+  position: absolute;
+  font-size: 50px;
+  z-index: 999;
+  margin-top: 35%;
+  margin-left: 25%;
+  color: #ffeba7;
+  /* color: #fff; */
+  /* background-color: rgba(16,39,112,.4); */
+  padding: 2%;
+}
+
+.start-desc-container {
+  position: absolute;
+  width: 55%;
+  margin-top: 45%;
+  margin-left: 25%;
+  /* background-color: rgba(16,39,112,.4);
+  border-radius: 8px; */
+  padding: 2%;
+}
+
+.start-desc {
+  font-size: 25px;
+  color: #ffeba7;
+  /* color: #fff; */
+}
+
+.start-right {
+  position: relative;
+  width: 55%;
+  height: 100vh;
+}
+
+.start-right-bg {
+  position: absolute;
+  z-index: -1;
+  /* text-align: right; */
+  margin-right: 8%;
+  margin-top: -3%;
+}
+
+.start-right-bg-2 {
+  position: absolute;
+  z-index: -1;
+  /* text-align: right; */
+  margin-right: 8%;
+  margin-top: -14.5%;
+}
+
+.start-right-logo {
+  width: 65%;
+  opacity: .8;
 }
 
 /* login spinner */
+
 .section{
-  position: relative;
-  width: 25%;
+  position: absolute;
+  width: 50%;
   display: block;
   justify-items: center;
   text-align: center;
-  margin-left: 50%;
+  margin-left: 25%;
+  margin-top: 15%;
+  z-index: 9999;
+}
+
+.mb-0 {
+  color: #ffeba7;
 }
 
 [type="checkbox"]:checked,
@@ -350,6 +447,7 @@ display: none;
   width: 100%;
   height: 100%;
   background-color: #6ec0e4;
+  /* background-color: #fff; */
   position: absolute;
   border-radius: 6px;
   -webkit-transform-style: preserve-3d;
@@ -394,7 +492,8 @@ display: none;
   letter-spacing: 0.5px;
   outline: none;
   color: #c4c3ca;
-  background-color: #1f2029;
+  /* background-color: #1f2029; */
+  background-color: whitesmoke;
   border: none;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
@@ -558,4 +657,180 @@ h4 {
   width: 80%;
   margin-left: 10%;
   margin-bottom: 10%;
+}
+
+/* Goals CSS */
+
+.goal-master {
+  width: 89%;
+  height: 90%;
+  min-height: 90%;
+  margin-left: 11%;
+}
+
+.goal-main {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.goal-left {
+  background-color: #6ec0e4;
+  width: 40%;
+  height: 90%;
+  padding-bottom: 50.25%;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 20px;
+}
+
+.goal-right {
+  width: 60%;
+  height: 100%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+}
+
+.goalThree {
+  width: 100%;
+  height: 40%;
+  background-color: #6ec0e4;
+  margin-bottom: 3%;
+  padding-bottom: 22%;
+  border-radius: 20px;
+}
+
+.goalThree-title {
+  margin-left: 2%;
+  padding-top: 2%;
+}
+
+.goalThree-desc {
+  margin-left: 2%;
+}
+
+.left-head {
+  margin-left: 2%;
+  padding-top: 2%;
+  color: #ffeba7;
+}
+
+.left-content {
+  margin-left: 2%;
+}
+
+/* Budget CSS */
+
+.budget-master {
+  width: 89%;
+  height: 90%;
+  min-height: 90%;
+  margin-left: 11%;
+}
+
+.budget-main {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.budget-left {
+  background-color: #63accd;
+  width: 40%;
+  height: 90%;
+  padding-bottom: 50.25%;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 20px;
+}
+
+.budget-right {
+  width: 60%;
+  height: 100%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+}
+
+.budgetThree {
+  width: 100%;
+  height: 40%;
+  background-color: #63accd;
+  margin-bottom: 3%;
+  padding-bottom: 22%;
+  border-radius: 20px;
+}
+
+.budgetThree-title {
+  margin-left: 2%;
+  padding-top: 2%;
+}
+
+.budgetThree-desc {
+  margin-left: 2%;
+}
+
+/* Expense CSS */
+
+.expense-master {
+  width: 89%;
+  height: 90%;
+  min-height: 90%;
+  margin-left: 11%;
+}
+
+.expense-main {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.expense-left {
+  background-color: #5899b6;
+  width: 40%;
+  height: 90%;
+  padding-bottom: 50.25%;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 20px;
+}
+
+.expense-right {
+  width: 60%;
+  height: 100%;
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+}
+
+.expenseThree {
+  width: 100%;
+  height: 40%;
+  background-color: #5899b6;
+  margin-bottom: 3%;
+  padding-bottom: 22%;
+  border-radius: 20px;
+}
+
+.expenseThree-title {
+  margin-left: 2%;
+  padding-top: 2%;
+}
+
+.expenseThree-desc {
+  margin-left: 2%;
+  padding-bottom: 24%;
 }

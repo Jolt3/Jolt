@@ -3,10 +3,14 @@ import '../src/App.css';
 import {Navigation} from '../src/components/Navigation';
 import {Header} from '../src/components/Header';
 import Data from '../src/assets/data/mock-data.json';
-// import {Login} from './components/Login-Spinner';
 import {Dashboard} from './components/Dashboard';
 import React, { useEffect, useContext, useCallback } from "react";
-import Context from './components/Context'
+import {Goals} from './components/Goals';
+import Context from './components/Context';
+import {Budgeting} from './components/Budgeting';
+import {Expenses} from './components/Expenses';
+import {Start} from './components/Login';
+import GoalList from './components/Goal/GoalList';
 import {
   ApolloClient,
   InMemoryCache,
@@ -40,6 +44,8 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
+
 
 
 function App() {
@@ -123,6 +129,7 @@ function App() {
       <ApolloProvider client={client}>
         <Router>
         <div className="App">
+            {/* <Start /> */}
           <Navigation />
           <Header placeholder='Search Here' data={Data}/>
           <Routes>
@@ -138,6 +145,9 @@ function App() {
           </Routes>
         </div>
         </Router>
+        <Goals />
+        {/* <Budgeting /> */}
+        {/* <Expenses /> */}
       </ApolloProvider>
     );
   }

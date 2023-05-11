@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from "react";
 import { usePlaidLink } from "react-plaid-link";
 import Button from "plaid-threads/Button";
-
 import Context from "./Context";
 import { Products } from "plaid";
+const bank = require('../assets/img/icons8-bank-account-96.png');
 
 const Link = () => {
   const { linkToken, isPaymentInitiation, dispatch } = useContext(Context);
@@ -80,9 +80,10 @@ const Link = () => {
   }, [ready, open, isOauth]);
 
   return (
-    <Button onClick={() => open()}>
-      Launch Link
-    </Button>
+    <>
+      <a onClick={() => open()}><img src={bank} alt="Bank" /></a>
+      <span className='nav-text'>Link Account</span>
+    </>
   );
 };
 
