@@ -7,7 +7,8 @@ import home from '../assets/img/icons8-home-60.png';
 import goals from '../assets/img/icons8-saving-64.png';
 import budget from '../assets/img/icons8-budgeting-64.png';
 import expenses from '../assets/img/icons8-analytics-60.png';
-import bank from '../assets/img/icons8-bank-account-96.png';
+import Link from './Link';
+// import bank from '../assets/img/icons8-bank-account-96.png';
 
 // <a target="_blank" href="https://icons8.com/icon/59809/home">Home</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 // <a target="_blank" href="https://icons8.com/icon/AYU8q9jCdaxc/saving">Saving</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
@@ -38,8 +39,9 @@ export const Navigation = () => {
                 <span className='nav-text'>Budgeting</span>
                 <a href='#section'><img src={expenses} alt="Expenses" /></a>
                 <span className='nav-text'>Expenses</span>
-                <a href='#section'><img src={bank} alt="Bank" /></a>
-                <span className='nav-text'>Link Account</span>
+                {/* <a href='#section'><img src={bank} alt="Bank" /></a>
+                <span className='nav-text'>Link Account</span> */}
+                <Link />
             </div>
         </div>
     )
