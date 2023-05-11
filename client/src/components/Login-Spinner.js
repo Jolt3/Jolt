@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from '../assets/img/JOLT-logo.png';
 
 export const Login = () => {
     return (
@@ -11,6 +12,9 @@ export const Login = () => {
                     <div className="card-front">
                         <div className="center-wrap">
                             <div className="text-center">
+                                <div className='start-right-bg-2'>
+                                    <img className='start-right-logo' src={Logo}  />
+                                </div>
                                 <h4 className="mb-4 pb-3">Log In</h4>
                                 <div className="form-group">
                                     <input type="email" className="form-style" placeholder="Email"/>
@@ -28,6 +32,9 @@ export const Login = () => {
                     <div className="card-back">
  						<div className="center-wrap">
  							<div className="text-center">
+                                <div className='start-right-bg'>
+                                    <img className='start-right-logo' src={Logo}  />
+                                </div>
  								<h4 className="mb-3 pb-3">Sign Up</h4>
  								<div className="form-group">
  									<input type="text" className="form-style" placeholder="Full Name"/>
