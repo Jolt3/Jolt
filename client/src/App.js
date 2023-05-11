@@ -91,11 +91,11 @@ function App() {
 
     return (
       <div className="App">
-        {/* <Start /> */}
-        <Navigation />
-        <Header placeholder='Search Here' data={Data}/>
+        <Start />
+        {/* <Navigation /> */}
+        {/* <Header placeholder='Search Here' data={Data}/> */}
         {/* <Dashboard /> */}
-        <Goals />
+        {/* <Goals /> */}
         {/* <Budgeting /> */}
         {/* <Expenses /> */}
       </div>

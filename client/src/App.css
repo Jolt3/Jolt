@@ -14,6 +14,7 @@
     font-family: sans-serif !important;
     height: 100%;
     overflow: hidden;
+    background-image: url('./assets//img/vectorbackground.png');
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -149,9 +150,11 @@
   align-items: center;
   /* justify-content: center; */
   position: relative;
-  background-color: #6ec0e4;
+  /* background-color: #6ec0e4; */
+  /* background-image: url('./assets/img/vectorbackground.png'); */
   width: 89%;
   height: 10%;
+  max-height: 10%;
 }
 
 .searchInputs {
@@ -238,6 +241,7 @@ margin-top: 25px;
   position: relative;
   font-size: 18px;
   width: 100%;
+  color: #fff;
 }
 
 .log-out {
