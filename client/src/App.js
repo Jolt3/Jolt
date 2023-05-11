@@ -58,7 +58,7 @@ function App() {
       return { paymentInitiation: false };
     }
     const data = await response.json();
-    const paymentInitiation: boolean = data.products.includes(
+    const paymentInitiation = data.products.includes(
       "payment_initiation"
     );
     dispatch({
@@ -129,25 +129,26 @@ function App() {
       <ApolloProvider client={client}>
         <Router>
         <div className="App">
-            {/* <Start /> */}
-          <Navigation />
-          <Header placeholder='Search Here' data={Data}/>
+            
+          
           <Routes>
+              <Route
+                path='/'
+                element={<Start />}
+              />
             <Route
-              path="/"
+              path="/dashboard"
               element={
                 <ProtectedRoute>
+                  <Navigation />
+                    <Header placeholder='Search Here' data={Data}/>
                   <Dashboard />
                 </ProtectedRoute>
               }
             />
-            {/* <Login /> */}
           </Routes>
         </div>
         </Router>
-        <Goals />
-        {/* <Budgeting /> */}
-        {/* <Expenses /> */}
       </ApolloProvider>
     );
   }
