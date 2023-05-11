@@ -14,6 +14,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { ProtectedRoute } from './routes/protectedRoutes';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -67,7 +69,7 @@ function App() {
     async (isPaymentInitiation) => {
       // Link tokens for 'payment_initiation' use a different creation flow in your backend.
       const path = isPaymentInitiation
-        ? "/api/create_link_token_for_payment"
+        ? "/api/create_link_token_for_payment"// step 1
         : "/api/create_link_token";
       const response = await fetch(path, {
         method: "POST",
@@ -76,7 +78,7 @@ function App() {
         dispatch({ type: "SET_STATE", state: { linkToken: null } });
         return;
       }
-      console.log('step 2?? gets the link token')
+      console.log('step 2?? gets the link token') 
       const data = await response.json();
       if (data) {
         if (data.error != null) {
@@ -119,12 +121,23 @@ function App() {
 
     return (
       <ApolloProvider client={client}>
+        <Router>
         <div className="App">
           <Navigation />
           <Header placeholder='Search Here' data={Data}/>
-          {/* <Login /> */}
-          <Dashboard />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            {/* <Login /> */}
+          </Routes>
         </div>
+        </Router>
       </ApolloProvider>
     );
   }
