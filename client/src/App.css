@@ -102,6 +102,7 @@
     justify-content: center;
     line-height: 1;
     border: 1px solid rgba(255,255,255,0.5);
+    cursor: pointer;
   }
   
   .navigate a::before {
@@ -413,7 +414,7 @@ display: none;
   color: #ffeba7;
   background-color: #020305;
   font-family: 'unicons';
-  content: '\eb4f';
+  content: '\26A1';
   z-index: 20;
   top: -10px;
   left: -10px;
@@ -424,7 +425,7 @@ display: none;
 }
 
 .checkbox:checked + label:before {
-  transform: translateX(44px) rotate(-270deg);
+  transform: translateX(44px) rotate(-360deg);
 }
 
 .card-3d-wrap {
@@ -543,12 +544,13 @@ display: none;
   color: #000000;
   margin-top: 10px;
   margin-bottom: 20px;
+  box-shadow: 0 0 30px 16px rgba(16,39,112,.3);
 }
 
 .btn:hover{  
   background-color: #000000;
   color: #ffeba7;
-  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+  box-shadow: 0 0 30px 16px rgba(16,39,112,.3);
 }
 
 a:hover {
@@ -557,10 +559,11 @@ a:hover {
 
 .link {
   color: #ffeba7;
+  text-decoration: none;
 }
 
 .link:hover {
-  color: #c4c3ca;
+  color: #121212;
 }
 
 h6 {
@@ -574,7 +577,8 @@ h6 span{
 }
 
 h4 {
-  color: #ffeba7;
+  /* color: #ffeba7; */
+  color: navy;
   margin-bottom: 10px;
 }
 
@@ -601,7 +605,9 @@ h4 {
   min-height: 49%;
   /* background-color: #6ec0e4; */
   /* background-color: #5DF01D; */
-  background-color: #ffeba7;
+  /* background-color: #ffeba7; */
+  background-color: whitesmoke;
+  /* background-color: lightcyan; */
   padding-bottom: 20%;
   margin-left: 1%;
   border-radius: 20px;
@@ -640,14 +646,16 @@ h4 {
   min-width: 95%;
   height: 100%;
   min-height: 100%;
-  background-color: #6ec0e4;
+  /* background-color: #6ec0e4; */
+  background-color: whitesmoke;
   margin-left: 2.2%;
   border-radius: 20px;
 }
 
 .dashThree-title {
   padding: 2%;
-  color: #ffeba7;
+  /* color: #ffeba7; */
+  color: navy;
 }
 
 .dashThree-desc {
@@ -681,7 +689,9 @@ h4 {
 }
 
 .goal-left {
-  background-color: #6ec0e4;
+  /* background-color: #6ec0e4; */
+  /* background-color: #07e9ff; */
+  background-color: whitesmoke;
   width: 40%;
   height: 90%;
   padding-bottom: 50.25%;
@@ -703,7 +713,9 @@ h4 {
 .goalThree {
   width: 100%;
   height: 40%;
-  background-color: #6ec0e4;
+  /* background-color: #6ec0e4; */
+  /* background-color: #07e9ff; */
+  background-color: whitesmoke;
   margin-bottom: 3%;
   padding-bottom: 22%;
   border-radius: 20px;
@@ -721,7 +733,8 @@ h4 {
 .left-head {
   margin-left: 2%;
   padding-top: 2%;
-  color: #ffeba7;
+  /* color: #ffeba7; */
+  color: navy;
 }
 
 .left-content {
@@ -746,7 +759,9 @@ h4 {
 }
 
 .budget-left {
-  background-color: #63accd;
+  /* background-color: #63accd; */
+  /* background-color: lightcyan; */
+  background-color: whitesmoke;
   width: 40%;
   height: 90%;
   padding-bottom: 50.25%;
@@ -768,7 +783,9 @@ h4 {
 .budgetThree {
   width: 100%;
   height: 40%;
-  background-color: #63accd;
+  /* background-color: #63accd; */
+  /* background-color: lightcyan; */
+  background-color: whitesmoke;
   margin-bottom: 3%;
   padding-bottom: 22%;
   border-radius: 20px;
@@ -801,7 +818,8 @@ h4 {
 }
 
 .expense-left {
-  background-color: #5899b6;
+  /* background-color: #5899b6; */
+  background-color: whitesmoke;
   width: 40%;
   height: 90%;
   padding-bottom: 50.25%;
@@ -823,7 +841,8 @@ h4 {
 .expenseThree {
   width: 100%;
   height: 40%;
-  background-color: #5899b6;
+  /* background-color: #5899b6; */
+  background-color: whitesmoke;
   margin-bottom: 3%;
   padding-bottom: 22%;
   border-radius: 20px;
