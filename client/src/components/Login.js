@@ -9,6 +9,11 @@ import Vector from '../assets/img/vectorbackground.png';
 /* <a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com/</a> */
 
 export const Start = () => {
+
+    const [email, setEmail] = useState(" ");
+    const [password, setPassword] = useState(" ");
+
+
     return (
         // <Container className='start-master' style={{backgroundImage:`url(${Background})`, width:'100%'}}>
         <Container className='start-master' style={{backgroundImage:`url(${Vector})`, backgroundRepeat: 'no-repeat', position: 'absolute', zIndex: '-999', width:'100%'}}>
@@ -20,7 +25,13 @@ export const Start = () => {
                 </div>
             </Col>
             <Col className='start-right'>
-                <Login />
+                <Login 
+                    value={email}
+                    onchange={(e) => setEmail(e.target)}
+                    required
+                    type="email"
+                    id="email-required"
+                />
             </Col>
         </Container>
     )
