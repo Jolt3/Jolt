@@ -1,36 +1,36 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import { ExpensesJr } from './ExpensesJr';
+import { BudgetingJr } from '../components/Dashboard/BudgetingJr';
 
-export const Expenses = () => {
+export const Budgeting = () => {
     const items = [
         {
-            title: "Expenses-Placeholder",
+            title: "Goals-Placeholder",
             description: "This is a test",
         },
         {
-            title: "Expenses-Placeholder",
+            title: "Goals-Placeholder",
             description: "This is a test",
         },
         {
-            title: "Expenses-Placeholder",
+            title: "Goals-Placeholder",
             description: "This is a test",
         }
     ];
 
     return (
-        <section className='expense-master'>
-            <Container className='expense-main'>
-                <Col className='expense-left'>
-                    <h2 className='left-head'>Expenses</h2>
+        <section className='budget-master'>
+            <Container className='budget-main'>
+                <Col className='budget-left'>
+                    <h2 className='left-head'>Budget</h2>
                     <p className='left-content'>Here is where we will put content</p>
                 </Col>
-                <Col size={7} className='expense-right'>
+                <Col size={7} className='budget-right'>
                     <Row className='right-content'>
                         {
                             items.map((item, index) => {
                                 return (
-                                    <ExpensesJr
+                                    <BudgetingJr
                                     key = {index}
                                     {...item}
                                     />
