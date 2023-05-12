@@ -49,6 +49,11 @@
     color: red;
   }
 
+  .master {
+    width: 100vh;
+    height: 100vh;
+  }
+
 /* Master NavBar CSS */
  .sidenav {
     height: 100%;
