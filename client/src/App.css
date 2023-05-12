@@ -425,7 +425,7 @@ display: none;
 }
 
 .checkbox:checked + label:before {
-  transform: translateX(44px) rotate(-360deg);
+  transform: translateX(44px) rotate(-180deg);
 }
 
 .card-3d-wrap {

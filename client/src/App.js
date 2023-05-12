@@ -126,6 +126,15 @@ function App() {
   }, [dispatch, generateToken, getInfo]);
 
     return (
+      <div className="App">
+        {/* <Start /> */}
+        <Navigation />
+        <Header placeholder='Search Here' data={Data}/>
+        <Dashboard />
+        {/* <Goals /> */}
+        {/* <Budgeting /> */}
+        {/* <Expenses /> */}
+      </div>
       <ApolloProvider client={client}>
         <Router>
         <div className="App">
