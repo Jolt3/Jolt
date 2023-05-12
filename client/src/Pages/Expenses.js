@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import { ExpensesJr } from './ExpensesJr';
+import { ExpensesJr } from '../components/Dashboard/ExpensesJr';
 
 export const Expenses = () => {
     const items = [

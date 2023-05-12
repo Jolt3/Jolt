@@ -3,12 +3,12 @@ import '../src/App.css';
 import {Navigation} from '../src/components/Navigation';
 import {Header} from '../src/components/Header';
 import Data from '../src/assets/data/mock-data.json';
-import {Dashboard} from './components/Dashboard';
+import {Dashboard} from './Pages/Dashboard';
 import React, { useEffect, useContext, useCallback } from "react";
-import {Goals} from './components/Goals';
+import {Goals} from './Pages/Goals';
 import Context from './components/Context';
-import {Budgeting} from './components/Budgeting';
-import {Expenses} from './components/Expenses';
+import {Budgeting} from './Pages/Budgeting';
+import {Expenses} from './Pages/Expenses';
 import {Start} from './components/Login';
 import GoalList from './components/Goal/GoalList';
 import {

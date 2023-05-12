@@ -1,8 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../assets/img/JOLT-logo.png';
-import {Link} from 'react-router-dom'
+import { useMutation } from '@apollo/client';
+import Auth from "../utils/auth";
+import { ADD_USER, LOGIN_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom'
+
 
 export const Login = () => {
+
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const [login,  {data}] = useMutation(LOGIN_USER);
+const [username, setUsername] = useState("");
+const [register] = useMutation(ADD_USER);
+const [message, setMessage] = useState();
+
+const loginHandler = async () => {
+    // step 1 validate input fields
+    // if inputs are valid, you need a token
+    try {
+        const {data} = await login({
+            variables: {
+                email,
+                password,
+            }
+        });
+        Auth.login(data.login.token); 
+        console.log(data);
+    } catch (e) {
+        console.error(e);
+        setMessage("Email or Password Invalid")
+        
+    }
+}
+
+
+
+
+// const [register, {error, data}] = useMutation(ADD_USER);
+
+
+const registerHandler = async () => {
+
+
+    try {
+        const {data} = await register({
+            variables: {
+                email,
+                password,
+                username,
+            }
+        });
+        console.log(data);
+        Auth.register(data.addUser.token)
+    } catch (e) {
+        console.error(e);
+        setMessage("User already exist");
+    }
+}
+
+
     return (
         <div className="section">
             <h6 className="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
@@ -18,17 +75,15 @@ export const Login = () => {
                                 </div>
                                 <h4 className="mb-4 pb-3">Log In</h4>
                                 <div className="form-group">
-                                    <input type="email" className="form-style" placeholder="Email"/>
+                                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-style" placeholder="Email"/>
 									<i className="input-icon uil uil-at"></i>
                                 </div>
                                 <div className="form-group mt-2">
-									<input type="password" className="form-style" placeholder="Password"/>
+									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
 									<i className="input-icon uil uil-lock-alt"></i>
 								</div>
-                                <Link to='/dashboard' className="btn mt-4">Login</Link>
-                                <p className="mb-0 mt-4 text-center"><a className="link">Forgot your password?</a></p>
-
-                                {/* needs function to validate, remove current href */}
+                                <Link to='/dashboard'><button onClick={loginHandler} className="btn mt-4">Login</button></Link> 
+                                {message}
                             </div>
                         </div>
                     </div>
@@ -40,23 +95,19 @@ export const Login = () => {
                                 </div>
  								<h4 className="mb-3 pb-3">Sign Up</h4>
  								<div className="form-group">
- 									<input type="text" className="form-style" placeholder="Full Name"/>
+ 									<input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="form-style" placeholder="UserName"/>
  									<i className="input-icon uil uil-user"></i>
  								</div>	
- 								<div className="form-group mt-2">
- 									<input type="tel" className="form-style" placeholder="Phone Number"/>
- 									<i className="input-icon uil uil-phone"></i>
- 								</div>	
                                 <div className="form-group mt-2">
- 									<input type="email" className="form-style" placeholder="Email"/>
+ 									<input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-style" placeholder="Email"/>
  									<i className="input-icon uil uil-at"></i>
  								</div>
  								<div className="form-group mt-2">
- 									<input type="password" className="form-style" placeholder="Password"/>
+ 									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
  									<i className="input-icon uil uil-lock-alt"></i>
  								</div>
-
- 									<a className="btn mt-4">Register</a>
+ 									<Link to='/dashboard'><button onClick={registerHandler} className="btn mt-4">Register</button></Link>
+                                    {message}
  				      			</div>
  			      			</div>
  			      		</div>

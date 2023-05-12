@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import { GoalsJr } from './GoalsJr';
+import { BudgetingJr } from '../components/Dashboard/BudgetingJr';
 
-export const Goals = () => {
+export const Budgeting = () => {
     const items = [
         {
             title: "Goals-Placeholder",
@@ -19,18 +19,18 @@ export const Goals = () => {
     ];
 
     return (
-        <section className='goal-master'>
-            <Container className='goal-main'>
-                <Col className='goal-left'>
-                    <h2 className='left-head'>Goals</h2>
+        <section className='budget-master'>
+            <Container className='budget-main'>
+                <Col className='budget-left'>
+                    <h2 className='left-head'>Budget</h2>
                     <p className='left-content'>Here is where we will put content</p>
                 </Col>
-                <Col size={7} className='goal-right'>
+                <Col size={7} className='budget-right'>
                     <Row className='right-content'>
                         {
                             items.map((item, index) => {
                                 return (
-                                    <GoalsJr
+                                    <BudgetingJr
                                     key = {index}
                                     {...item}
                                     />

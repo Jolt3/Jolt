@@ -16,7 +16,7 @@ import Link from './Link';
 // <a target="_blank" href="https://icons8.com/icon/HWom09vVRDND/budgeting">Budgeting</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 // <a target="_blank" href="https://icons8.com/icon/6lV0KFMWPPsB/bank-account">Bank Account</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
-export const Navigation = () => {
+export const Navigation = ({currentPage, pageSwitch}) => {
     return (
         // <Navbar expand="lg">
         //     <Container>
@@ -31,13 +31,13 @@ export const Navigation = () => {
         <div className='sidenav'>
             <img src={logo} alt='logo' className='logo' />
             <div className='navigate'>
-                <a href='#section'><img src={home} alt="Home" /></a>
+                <a href='#dashboard' onClick={() => pageSwitch('dashboard')} className={currentPage === 'dashboard'}><img src={home} alt="Home" /></a>
                 <span className='nav-text'>Dashboard</span>
-                <a href='#section'><img src={goals} alt="Goals" /></a>
+                <a href='#goals' onClick={() => pageSwitch('goals')} className={currentPage === 'goals'}><img src={goals} alt="Goals" /></a>
                 <span className='nav-text'>Goals</span>
-                <a href='#section'><img src={budget} alt="Budget" /></a>
+                <a href='#budgeting' onClick={() => pageSwitch('budgeting')} className={currentPage === 'budgeting'}><img src={budget} alt="Budget" /></a>
                 <span className='nav-text'>Budgeting</span>
-                <a href='#section'><img src={expenses} alt="Expenses" /></a>
+                <a href='#expenses' onClick={() => pageSwitch('expenses')} className={currentPage === 'expenses'}><img src={expenses} alt="Expenses" /></a>
                 <span className='nav-text'>Expenses</span>
                 {/* <a href='#section'><img src={bank} alt="Bank" /></a>
                 <span className='nav-text'>Link Account</span> */}
