@@ -357,7 +357,7 @@ margin-top: 25px;
   z-index: -1;
   /* text-align: right; */
   margin-right: 8%;
-  margin-top: -3%;
+  margin-top: -10%;
 }
 
 .start-right-bg-2 {
@@ -365,7 +365,7 @@ margin-top: 25px;
   z-index: -1;
   /* text-align: right; */
   margin-right: 8%;
-  margin-top: -14.5%;
+  margin-top: -17%;
 }
 
 .start-right-logo {
@@ -501,7 +501,7 @@ display: none;
   line-height: 22px;
   letter-spacing: 0.5px;
   outline: none;
-  color: #c4c3ca;
+  color: #121212;
   /* background-color: #1f2029; */
   background-color: whitesmoke;
   border: none;
