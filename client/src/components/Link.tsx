@@ -8,6 +8,30 @@ const bank = require('../assets/img/icons8-bank-account-96.png');
 const Link = () => {
   const { linkToken, isPaymentInitiation, dispatch } = useContext(Context);
 
+  const getTransactions = async () => {
+    const getTransactions = await fetch("/api/transactions", {
+      method: 'GET'
+    });
+    const data = await getTransactions.json();
+    console.log(data)
+  }
+
+  const getAccount = async () => {
+    const getAccount = await fetch("api/accounts", {
+      method: 'GET'
+    });
+    const data = await getAccount.json()
+    console.log(data)
+  }
+
+  const getBalance = async () => {
+    const getBalance = await fetch("api/balance", {
+      method: 'GET'
+    });
+    const data = await getBalance.json()
+    console.log(data)
+  }
+  
   const onSuccess = React.useCallback(
     (public_token: string) => {
       // If the access_token is needed, send public_token to server
@@ -42,6 +66,11 @@ const Link = () => {
             isItemAccess: true,
           },
         });
+        
+        getTransactions()
+        getBalance()
+        getAccount()
+        
       };
 
       // 'payment_initiation' products do not require the public_token to be exchanged for an access_token.
