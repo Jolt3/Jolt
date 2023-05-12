@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import { DashboardThree } from "./DashboardThree";
+import { DashboardThree } from "../components/Dashboard/DashboardThree";
 import placeholder from '../assets/img/placeholder.jpeg';
 
 export const Dashboard = () => {
