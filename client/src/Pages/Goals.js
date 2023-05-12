@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import { GoalsJr } from './GoalsJr';
+import { GoalsJr } from '../components/Dashboard/GoalsJr';
 
 export const Goals = () => {
     const items = [
