@@ -3,6 +3,7 @@ import { usePlaidLink } from "react-plaid-link";
 import Button from "plaid-threads/Button";
 import Context from "./Context";
 import { Products } from "plaid";
+import axios from 'axios'
 const bank = require('../assets/img/icons8-bank-account-96.png');
 
 const Link = () => {
@@ -66,6 +67,10 @@ const Link = () => {
             isItemAccess: true,
           },
         });
+
+        //Assigns Access Token to DB
+        const accessToken = data._access_token;
+
         
         getTransactions()
         getBalance()
