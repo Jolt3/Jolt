@@ -4,13 +4,49 @@ import {Navigation} from '../src/components/Navigation';
 import {Header} from '../src/components/Header';
 import Data from '../src/assets/data/mock-data.json';
 import {Dashboard} from './components/Dashboard';
+import React, { useEffect, useContext, useCallback } from "react";
 import {Goals} from './components/Goals';
-import React, {useEffect, useContext, useCallback} from 'react';
 import Context from './components/Context';
 import {Budgeting} from './components/Budgeting';
 import {Expenses} from './components/Expenses';
 import {Start} from './components/Login';
 import GoalList from './components/Goal/GoalList';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { ProtectedRoute } from './routes/protectedRoutes';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Construct our main GraphQL API endpoint
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = sessionStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
+
+
 
 function App() {
   const { linkSuccess, isItemAccess, isPaymentInitiation, dispatch } = useContext(Context);
@@ -22,7 +58,7 @@ function App() {
       return { paymentInitiation: false };
     }
     const data = await response.json();
-    const paymentInitiation: boolean = data.products.includes(
+    const paymentInitiation = data.products.includes(
       "payment_initiation"
     );
     dispatch({
@@ -39,7 +75,7 @@ function App() {
     async (isPaymentInitiation) => {
       // Link tokens for 'payment_initiation' use a different creation flow in your backend.
       const path = isPaymentInitiation
-        ? "/api/create_link_token_for_payment"
+        ? "/api/create_link_token_for_payment"// step 1
         : "/api/create_link_token";
       const response = await fetch(path, {
         method: "POST",
@@ -48,7 +84,7 @@ function App() {
         dispatch({ type: "SET_STATE", state: { linkToken: null } });
         return;
       }
-      console.log('step 2?? gets the link token')
+      console.log('step 2?? gets the link token') 
       const data = await response.json();
       if (data) {
         if (data.error != null) {
@@ -99,6 +135,30 @@ function App() {
         {/* <Budgeting /> */}
         {/* <Expenses /> */}
       </div>
+      <ApolloProvider client={client}>
+        <Router>
+        <div className="App">
+            
+          
+          <Routes>
+              <Route
+                path='/'
+                element={<Start />}
+              />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <Navigation />
+                    <Header placeholder='Search Here' data={Data}/>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </div>
+        </Router>
+      </ApolloProvider>
     );
   }
   
