@@ -3,6 +3,7 @@ import Logo from '../assets/img/JOLT-logo.png';
 import { useMutation } from '@apollo/client';
 import Auth from "../utils/auth";
 import { ADD_USER, LOGIN_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom'
 
 
 export const Login = () => {
@@ -81,7 +82,7 @@ const registerHandler = async () => {
 									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
 									<i className="input-icon uil uil-lock-alt"></i>
 								</div>
-                                <button onClick={loginHandler} className="btn mt-4">Login</button>
+                                <Link to='/dashboard' onClick={loginHandler} className="btn mt-4">Login</Link> 
                                 {message}
                             </div>
                         </div>
@@ -105,7 +106,7 @@ const registerHandler = async () => {
  									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
  									<i className="input-icon uil uil-lock-alt"></i>
  								</div>
- 									<button onClick={registerHandler} className="btn mt-4">Register</button>
+ 									<Link to='/dashboard' onClick={registerHandler} className="btn mt-4">Register</Link>
                                     {message}
  				      			</div>
  			      			</div>

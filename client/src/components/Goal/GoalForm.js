@@ -31,8 +31,16 @@ const GoalForm = ({ onSave }) => {
         setMaxAmount(0);
     };
 
+
+    const formStlye = {
+        borderRadius: '8px',
+        border: '1px solid #1e1e1e',
+        padding: '3%',
+        marginBottom: '6vh'
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
+        <form style={formStlye} onSubmit={handleSubmit}>
             <div className="inputContainer">
                 <div>
                     <h3>Goal Name</h3>

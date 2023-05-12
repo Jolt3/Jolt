@@ -26,6 +26,17 @@
   a:hover {
     text-decoration: none;
   }
+
+  .budget-add:hover{
+    background-color: #151718;
+    cursor: pointer;
+  }
+
+  .budget-remove:hover{
+    background-color: #5DF01D;
+    color: #5DF01D;
+    cursor: pointer;
+  }
   
   img {
     width: 100%;
