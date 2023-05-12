@@ -82,7 +82,7 @@ const registerHandler = async () => {
 									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
 									<i className="input-icon uil uil-lock-alt"></i>
 								</div>
-                                <Link to='/dashboard'><button onClick={loginHandler} className="btn mt-4">Login</button></Link> 
+                                <Link to='/dashboard' onClick={loginHandler} className="btn mt-4">Login</Link> 
                                 {message}
                             </div>
                         </div>
@@ -106,7 +106,7 @@ const registerHandler = async () => {
  									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
  									<i className="input-icon uil uil-lock-alt"></i>
  								</div>
- 									<Link to='/dashboard'><button onClick={registerHandler} className="btn mt-4">Register</button></Link>
+ 									<Link to='/dashboard' onClick={registerHandler} className="btn mt-4">Register</Link>
                                     {message}
  				      			</div>
  			      			</div>
