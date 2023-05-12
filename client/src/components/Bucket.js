@@ -52,6 +52,7 @@ const DoughnutChart = () => {
         setNewBucketName('');
         setNewBucketAmount(0);
         setErrorMessage('')
+        console.log(updatedBuckets)
     };
 
     // Removes a bucket function

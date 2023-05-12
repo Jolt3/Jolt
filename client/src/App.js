@@ -20,6 +20,8 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { ProtectedRoute } from './routes/protectedRoutes';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ExpensesJr } from './components/ExpensesJr';
+import Bucket from "./components/Bucket"
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -126,39 +128,11 @@ function App() {
   }, [dispatch, generateToken, getInfo]);
 
     return (
-      <div className="App">
-        {/* <Start /> */}
-        <Navigation />
-        <Header placeholder='Search Here' data={Data}/>
-        <Dashboard />
-        {/* <Goals /> */}
-        {/* <Budgeting /> */}
-        {/* <Expenses /> */}
-      </div>
-      <ApolloProvider client={client}>
-        <Router>
-        <div className="App">
-            
-          
-          <Routes>
-              <Route
-                path='/'
-                element={<Start />}
-              />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
+      <>
                   <Navigation />
                     <Header placeholder='Search Here' data={Data}/>
-                  <Dashboard />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </div>
-        </Router>
-      </ApolloProvider>
+                  <GoalList />
+      </>
     );
   }
   

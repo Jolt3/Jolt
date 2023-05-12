@@ -7,7 +7,8 @@ const GoalList = () => {
     const [goals, setGoals] = useState([]);
 
     const handleGoalSave = (goal) => {
-        setGoals((prevGoals) => [...prevGoals, goal]);
+        setGoals((prevGoals) => [...prevGoals, goal])
+        console.log(goals)
     };
 
     const removeGoal = (index) => {
