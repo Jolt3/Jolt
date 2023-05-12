@@ -10,8 +10,6 @@ import Vector from '../assets/img/vectorbackground.png';
 
 export const Start = () => {
 
-    const [email, setEmail] = useState(" ");
-    const [password, setPassword] = useState(" ");
 
 
     return (
@@ -25,13 +23,7 @@ export const Start = () => {
                 </div>
             </Col>
             <Col className='start-right'>
-                <Login 
-                    value={email}
-                    onchange={(e) => setEmail(e.target)}
-                    required
-                    type="email"
-                    id="email-required"
-                />
+                <Login />
             </Col>
         </Container>
     )
