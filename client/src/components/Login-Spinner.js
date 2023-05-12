@@ -24,9 +24,13 @@ export const Login = () => {
 									<input type="password" className="form-style" placeholder="Password"/>
 									<i className="input-icon uil uil-lock-alt"></i>
 								</div>
+                                <a href="https://www.web-leb.com/code" className="btn mt-4">Login</a>
+                                <p className="mb-0 mt-4 text-center"><a className="link">Forgot your password?</a></p>
+
                                 {/* needs function to validate, remove current href */}
                                 <a className="btn mt-4">Login</a>
                                 <p className="mb-0 mt-4 text-center"><a href="https://www.web-leb.com/code" className="link">Forgot your password?</a></p>
+
                             </div>
                         </div>
                     </div>
@@ -53,7 +57,7 @@ export const Login = () => {
  									<input type="password" className="form-style" placeholder="Password"/>
  									<i className="input-icon uil uil-lock-alt"></i>
  								</div>
-                                    {/* needs function to validate, remove current href */}
+
  									<a className="btn mt-4">Register</a>
  				      			</div>
  			      			</div>

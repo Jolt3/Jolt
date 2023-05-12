@@ -140,3 +140,5 @@ const DoughnutChart = () => {
 }
 
 export default DoughnutChart
+
+//Add a save bucket button to save the array to database

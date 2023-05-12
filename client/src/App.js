@@ -141,7 +141,12 @@ function App() {
               path="/dashboard"
               element={
                 <ProtectedRoute>
-                  <Master />
+                  <Navigation />
+                    <Header placeholder='Search Here' data={Data}/>
+                  {/* <Dashboard /> */}
+                  <GoalList />
+
+                  <Master />n
                 </ProtectedRoute>
               }
             />
