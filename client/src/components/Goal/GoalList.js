@@ -5,11 +5,13 @@ import GoalForm from "./GoalForm";
 
 const GoalList = () => {
     const [goals, setGoals] = useState([]);
-        const [showAddFundsForm, setShowAddFundsForm] = useState(-1);
-        const [fundsToAdd, setFundsToAdd] = useState(0);
+    const [showAddFundsForm, setShowAddFundsForm] = useState(-1);
+    const [fundsToAdd, setFundsToAdd] = useState(0);
+    const [accountBalance, setAccountBalance] = useState(0);
 
     const handleGoalSave = (goal) => {
         setGoals((prevGoals) => [...prevGoals, goal]);
+        setAccountBalance((prevBalance) => prevBalance - goal.amount);
     };
 
     const removeGoal = (index) => {
@@ -25,14 +27,17 @@ const GoalList = () => {
     const handleFundsFormSubmit = (e, index) => {
         e.preventDefault();
         const updatedGoals = [...goals];
-        updatedGoals[index].amount += parseFloat(fundsToAdd);
+        const fundsAdded = parseFloat(fundsToAdd)
+        updatedGoals[index].amount += fundsAdded;
         setGoals(updatedGoals);
         setShowAddFundsForm(-1);
         setFundsToAdd(0);
-      };
+        setAccountBalance((prevBalance) => prevBalance - fundsAdded)
+    };
 
     return (
         <div style={{ marginTop: '25px', marginLeft: '250px' }}>
+            <h2>Account Balance: ${accountBalance}</h2>
             <GoalForm onSave={handleGoalSave} />
 
             {goals.length > 0 ? (
@@ -49,10 +54,10 @@ const GoalList = () => {
                                 {showAddFundsForm === index && (
                                     <form onSubmit={(e) => handleFundsFormSubmit(e, index)}>
                                         <input
-                                        type="number"
-                                        placeholder="Enter funds to add"
-                                        value={fundsToAdd}
-                                        onChange={(e) => setFundsToAdd(e.target.value)}
+                                            type="number"
+                                            placeholder="Enter funds to add"
+                                            value={fundsToAdd}
+                                            onChange={(e) => setFundsToAdd(e.target.value)}
                                         />
                                         <button type="submit">Add</button>
                                     </form>

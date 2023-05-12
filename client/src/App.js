@@ -126,18 +126,6 @@ function App() {
   }, [dispatch, generateToken, getInfo]);
 
     return (
-<<<<<<< HEAD
-      <div className="App">
-        {/* <Start /> */}
-        <Navigation />
-        <Header placeholder='Search Here' data={Data}/>
-        {/* <Dashboard /> */}
-        <GoalList />
-        {/* <Goals /> */}
-        {/* <Budgeting /> */}
-        {/* <Expenses /> */}
-      </div>
-=======
       <ApolloProvider client={client}>
         <Router>
         <div className="App">
@@ -154,7 +142,9 @@ function App() {
                 <ProtectedRoute>
                   <Navigation />
                     <Header placeholder='Search Here' data={Data}/>
-                  <Dashboard />
+                  {/* <Dashboard /> */}
+                  <GoalList />
+
                 </ProtectedRoute>
               }
             />
@@ -162,7 +152,6 @@ function App() {
         </div>
         </Router>
       </ApolloProvider>
->>>>>>> 960fd8c5ed44ef28f4f21c04b8f1a6262eb094a9
     );
   }
   
