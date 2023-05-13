@@ -14,7 +14,6 @@ const [login,  {data}] = useMutation(LOGIN_USER);
 const [username, setUsername] = useState("");
 const [register] = useMutation(ADD_USER);
 const [message, setMessage] = useState();
-
 const loginHandler = async () => {
     // step 1 validate input fields
     // if inputs are valid, you need a token
@@ -26,16 +25,28 @@ const loginHandler = async () => {
             }
         });
         Auth.login(data.login.token); 
-        console.log(data);
+        const userAlias = data.login.user.username
+        const isName = sessionStorage.getItem('username')
+        if (isName){
+            sessionStorage.removeItem('username')
+            sessionStorage.setItem('username', userAlias)
+        }   sessionStorage.setItem('username', userAlias)
+    
+
+        // const userData = await fetch(`api/user/${userAlias}`, {
+        //     method:'GET'
+        // });
+        // const response = await userData.json()
+        // console.log(response)
+
+
     } catch (e) {
         console.error(e);
-        setMessage("Email or Password Invalid")
+        setMessage("Email or Password Invalid!")
         
     }
+   
 }
-
-
-
 
 // const [register, {error, data}] = useMutation(ADD_USER);
 
@@ -53,6 +64,12 @@ const registerHandler = async () => {
         });
         console.log(data);
         Auth.register(data.addUser.token)
+        const userAlias = data.addUser.user.username
+        const isName = sessionStorage.getItem('username')
+        if (isName){
+            sessionStorage.removeItem('username')
+            sessionStorage.setItem('username', userAlias)
+        } sessionStorage.setItem('username', userAlias)
     } catch (e) {
         console.error(e);
         setMessage("User already exist");
@@ -82,9 +99,10 @@ const registerHandler = async () => {
 									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
 									<i className="input-icon uil uil-lock-alt"></i>
 								</div>
-                                <Link to='/dashboard' onClick={loginHandler} className="btn mt-4">Login</Link> 
-                                {message}
+                                <Link onClick={loginHandler} className="btn mt-4">Login</Link>
+                            
                             </div>
+                            <p style={{color: 'red'}}>{message}</p>
                         </div>
                     </div>
                     <div className="card-back">
@@ -103,11 +121,11 @@ const registerHandler = async () => {
  									<i className="input-icon uil uil-at"></i>
  								</div>
  								<div className="form-group mt-2">
- 									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
+ 									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password: Must have at least 5 characters"/>
  									<i className="input-icon uil uil-lock-alt"></i>
  								</div>
  									<Link to='/dashboard' onClick={registerHandler} className="btn mt-4">Register</Link>
-                                    {message}
+
  				      			</div>
  			      			</div>
  			      		</div>
