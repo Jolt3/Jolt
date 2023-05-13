@@ -141,10 +141,10 @@ function App() {
             path="/dashboard"
             element={
               <ProtectedRoute>
-                {/* <Navigation /> */}
-                  {/* <Header placeholder='Search Here' data={Data}/> */}
-                {/* <Dashboard /> */}
-                {/* <GoalList /> */}
+                <Navigation /> 
+                {/* <Header placeholder='Search Here' data={Data}/>
+                <Dashboard />
+                <GoalList /> */}
 
                 <Master />
               </ProtectedRoute>
