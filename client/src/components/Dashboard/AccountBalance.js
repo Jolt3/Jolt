@@ -145,15 +145,15 @@ const AccountBalanceChart = () => {
     }, [currentInterval]);
 
     return (
-        <div style={{ marginTop: '25px', marginLeft: '250px' }}>
-            <div style={{ display: 'flex', width: '50%', justifyContent: 'space-between' }}>
-                <button onClick={() => setCurrentInterval('1 Month')}>1 Month</button>
-                <button onClick={() => setCurrentInterval('3 Months')}>3 Months</button>
-                <button onClick={() => setCurrentInterval('6 Months')}>6 Months</button>
-                <button onClick={() => setCurrentInterval('1 Year')}>1 Year</button>
+        <div className='account-chart-main'>
+            <div className='account-chart'>
+                <button className='account-chart-buttons' onClick={() => setCurrentInterval('1 Month')}>1 Month</button>
+                <button className='account-chart-buttons' onClick={() => setCurrentInterval('3 Months')}>3 Months</button>
+                <button className='account-chart-buttons' onClick={() => setCurrentInterval('6 Months')}>6 Months</button>
+                <button className='account-chart-buttons' onClick={() => setCurrentInterval('1 Year')}>1 Year</button>
             </div>
-            <div style={{ display: 'flex', width: '50%' }}>
-                <canvas style={{ width: '100%', height: '200px' }} ref={chartRef} />
+            <div className='account-chart-graph'>
+                <canvas ref={chartRef} />
             </div>
         </div>
 
