@@ -716,6 +716,11 @@ h4 {
   color: navy;
 }
 
+.account-chart .active {
+  background-color: #ffeba7;
+  color: navy;
+}
+
 .account-chart-graph {
   width: 100%;
   height: auto;

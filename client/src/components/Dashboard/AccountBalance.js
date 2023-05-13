@@ -152,10 +152,10 @@ const AccountBalanceChart = () => {
     return (
         <div className='account-chart-main'>
             <div className='account-chart'>
-                <button className='account-chart-buttons' onClick={() => setCurrentInterval('1 Month')}>1 Month</button>
-                <button className='account-chart-buttons' onClick={() => setCurrentInterval('3 Months')}>3 Months</button>
-                <button className='account-chart-buttons' onClick={() => setCurrentInterval('6 Months')}>6 Months</button>
-                <button className='account-chart-buttons' onClick={() => setCurrentInterval('1 Year')}>1 Year</button>
+                <button className={`account-chart-buttons ${currentInterval === '1 Month' ? 'active' : ''}`} onClick={() => setCurrentInterval('1 Month')}>1 Month</button>
+                <button className={`account-chart-buttons ${currentInterval === '3 Months' ? 'active': ''}`} onClick={() => setCurrentInterval('3 Months')}>3 Months</button>
+                <button className={`account-chart-buttons ${currentInterval === '6 Months' ? 'active': ''}`} onClick={() => setCurrentInterval('6 Months')}>6 Months</button>
+                <button className={`account-chart-buttons ${currentInterval === '1 Year' ? 'active': ''}`} onClick={() => setCurrentInterval('1 Year')}>1 Year</button>
             </div>
             <div className='account-chart-graph'>
                 <canvas ref={chartRef} />
