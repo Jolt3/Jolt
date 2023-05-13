@@ -3,7 +3,7 @@ import { Chart } from 'chart.js/auto'; // Imports necessary modules
 
 // Assigns numerical values for each option representing how many months are in each option
 const intervals = {
-    '1 Month': 1,
+    '1 Month': 30,
     '3 Months': 3,
     '6 Months': 6,
     '1 Year': 12,
@@ -17,30 +17,30 @@ const AccountBalanceChart = () => {
 
     useEffect(() => {
         // Gets the user balance as well as a min and max vaule
-        let balance = [100, 120, 80, 200, 150, 300, 250, 400, 350, 500, 450, 600]; // Add User account balances
+        let balance = [100, 120, 80, 200, 150, 300, 250, 400, 350, 500, 450, 600, 550, 700, 650, 800, 750, 900, 850, 1000, 950, 1100, 1050, 1200, 1150, 1300, 1250, 1400, 1350, 1500, 1450, 1600, 1550, 1700, 1650]; // Add User account balances
         // Defines months as whichever interval is selected
-        let months = intervals[currentInterval];
+        let interval = intervals[currentInterval];
 
         // Assigns the labels to a formatted date based on whichever time interval is selected
         let labels = [];
-        if (months === 1) {
-            for (let i = 0; i <= months; i++) {
-                const date = new Date();
-                date.setDate(date.getDate() - (months - i - 1) * 30);
-                const formattedDate = formatDate(date);
-                labels.push(formattedDate);
+        if (interval === 30) {
+            const today = new Date()
+            for (let i = interval - 1; i >= 0; i--) {
+                const date = new Date(today);
+                date.setDate(today.getDate() - i);
+                const formattedDate = formatDate(date)
+                labels.push(formattedDate)
 
                 function formatDate(date) {
                     const month = date.toLocaleString('en-US', { month: 'short' });
                     const day = date.toLocaleString('en-US', { day: 'numeric' });
-                    return `${month} ${day}`
+                    return `${day} ${month}`
                 }
-                labels.reverse();
             }
         } else {
-            for (let i = 0; i < months; i++) {
+            for (let i = 0; i < interval; i++) {
                 const date = new Date();
-                date.setMonth(date.getMonth() - (months - i - 1));
+                date.setMonth(date.getMonth() - (interval - i - 1));
                 const formattedDate = formatDate(date);
                 labels.push(formattedDate);
 
@@ -59,7 +59,7 @@ const AccountBalanceChart = () => {
             datasets: [
                 {
                     label: 'Account balance',
-                    data: balance.slice(12 - months),
+                    data: balance.slice(balance.length - interval),
                     borderColor: 'green',
                     backgroundColor: '#00ff0080',
                     borderWidth: 3,
