@@ -20,7 +20,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { ProtectedRoute } from './routes/protectedRoutes';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ExpensesJr } from './components/ExpensesJr';
+// import { ExpensesJr } from './components/ExpensesJr';
 import Bucket from "./components/Bucket"
 import {Master} from './components/Master-Dash';
 
@@ -141,10 +141,10 @@ function App() {
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <Navigation />
-                  <Header placeholder='Search Here' data={Data}/>
+                {/* <Navigation /> */}
+                  {/* <Header placeholder='Search Here' data={Data}/> */}
                 {/* <Dashboard /> */}
-                <GoalList />
+                {/* <GoalList /> */}
 
                 <Master />
               </ProtectedRoute>

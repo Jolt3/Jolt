@@ -5,15 +5,15 @@ import { BudgetingJr } from '../components/Dashboard/BudgetingJr';
 export const Budgeting = () => {
     const items = [
         {
-            title: "Goals-Placeholder",
+            title: "Budget-Placeholder",
             description: "This is a test",
         },
         {
-            title: "Goals-Placeholder",
+            title: "Budget-Placeholder",
             description: "This is a test",
         },
         {
-            title: "Goals-Placeholder",
+            title: "Budget-Placeholder",
             description: "This is a test",
         }
     ];
