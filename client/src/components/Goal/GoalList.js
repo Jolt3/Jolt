@@ -57,13 +57,13 @@ const GoalList = () => {
 
             <div>
                 <div style={{ background: 'whitesmoke',  width: '35vw', paddingBottom:'10%', padding: '3%', borderRadius:'20px'}}>
-                    <h2 style={{textAlign:'left', marginBottom:'4vh'}}>Account Balance: ${accountBalance}</h2>
+                    <h2 style={{textAlign:'left', marginBottom:'4vh', fontSize:'1.5vw'}}>Account Balance: ${accountBalance}</h2>
                     <GoalForm onSave={handleGoalSave} />
                 </div>
             </div>
                 <div>
                         <div style={{ background: 'whitesmoke',  width: '47vw', height:'37.4vw', minHeight:'37.4vw', maxHeight:'37.4vw', padding: '3%', borderRadius:'20px', marginLeft:'5%', overflow:'scroll'}}>
-                            <h2 style={{textAlign:'left', marginBottom:'4vh'}}>My Goals</h2>
+                            <h2 style={{textAlign:'left', marginBottom:'4vh', fontSize:'1.5vw'}}>My Goals</h2>
                             <ul style={{listStyle:'none'}}>
                                 {goals.map((goal, index) => (
                                     <li key={index}>

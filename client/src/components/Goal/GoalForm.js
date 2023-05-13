@@ -42,7 +42,7 @@ const GoalForm = ({ onSave }) => {
         <form style={formStlye} onSubmit={handleSubmit}>
             <div className="inputContainer">
                 <div>
-                    <h3>Goal Name</h3>
+                    <h3 style={{ fontSize:'1.5vw'}}>Goal Name</h3>
                     <input className='input-container'
                         type="text"
                         value={goalName}
@@ -53,7 +53,7 @@ const GoalForm = ({ onSave }) => {
 
             <div className="inputContainer">
                 <div>
-                    <h3>Current</h3>
+                    <h3 style={{ fontSize:'1.5vw'}}>Current</h3>
                     <input className='input-container'
                         type="number"
                         value={goalAmount}
@@ -64,7 +64,7 @@ const GoalForm = ({ onSave }) => {
 
             <div className="inputContainer">
                 <div>
-                    <h3>Goal</h3>
+                    <h3 style={{ fontSize:'1.5vw'}}>Goal</h3>
                     <input className='input-container'
                         type="number"
                         value={maxAmount}

@@ -19,11 +19,11 @@ export const Header = ({placeholder, data}) => {
     };
 
     return (
-        <div className='search'>
-            <div className='searchInputs'>
-                <input type='text' placeholder={placeholder} onChange={handleFilter}/>
+        <div className='search media'>
+            {/* <div className='searchInputs'> */}
+                {/* <input type='text' placeholder={placeholder} onChange={handleFilter}/> */}
                 {/* <div className='searchIcon'></div> */}
-            </div>
+            {/* </div> */}
             {/* {filteredData.length !== 0 && (
             <div className='dataResult'>
                 {filteredData.slice(0, 1).map((value, key) => {
