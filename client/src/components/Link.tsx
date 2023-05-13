@@ -72,9 +72,6 @@ const Link = () => {
         const accessToken = data.access_token;
         console.log(accessToken)
         
-        getTransactions()
-        getBalance()
-        getAccount()
         
       };
 
