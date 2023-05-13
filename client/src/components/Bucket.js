@@ -102,10 +102,10 @@ const DoughnutChart = () => {
         setShowAddBucket(!showAddBucket)
     }
     return (
-        <div style={{ marginTop: '25px', marginLeft: '250px' }}>
+        <div >
             {errorMessage && <p>{errorMessage}</p>}
-            <div style={{ display: 'flex', width: '25%' }}>
-                <Doughnut style={{ width: '100%', height: '200px' }} data={data} options={options} />
+            <div>
+                <Doughnut  data={data} options={options} />
             </div>
             <div>
                 {buckets.slice(1).map((bucket, index) => (

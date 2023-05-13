@@ -23,9 +23,7 @@ export const Budgeting = () => {
         <section className='budget-master'>
             <Container className='budget-main'>
                 <Col className='budget-left'>
-                    <DoughnutChart />
-                    <h2 className='left-head'>Budget</h2>
-                    <p className='left-content'>Here is where we will put content</p>
+                    <DoughnutChart style={{width: '100%', height: '100%'}} />
                 </Col>
                 <Col size={7} className='budget-right'>
                     <Row className='right-content'>
