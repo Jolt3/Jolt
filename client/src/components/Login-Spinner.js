@@ -14,7 +14,6 @@ const [login,  {data}] = useMutation(LOGIN_USER);
 const [username, setUsername] = useState("");
 const [register] = useMutation(ADD_USER);
 const [message, setMessage] = useState();
-
 const loginHandler = async () => {
     // step 1 validate input fields
     // if inputs are valid, you need a token
@@ -65,6 +64,12 @@ const registerHandler = async () => {
         });
         console.log(data);
         Auth.register(data.addUser.token)
+        const userAlias = data.addUser.user.username
+        const isName = sessionStorage.getItem('username')
+        if (isName){
+            sessionStorage.removeItem('username')
+            sessionStorage.setItem('username', userAlias)
+        } sessionStorage.setItem('username', userAlias)
     } catch (e) {
         console.error(e);
         setMessage("User already exist");

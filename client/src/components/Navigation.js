@@ -28,7 +28,7 @@ export const Navigation = ({currentPage, pageSwitch}) => {
         //         </Navbar.Collapse>
         //     </Container>
         // </Navbar>
-        <div className='sidenav'>
+        <div className='sidenav media'>
             <img src={logo} alt='logo' className='logo' />
             <div className='navigate'>
                 <a href='#dashboard' onClick={() => pageSwitch('dashboard')} className={currentPage === 'dashboard'}><img src={home} alt="Home" /></a>
