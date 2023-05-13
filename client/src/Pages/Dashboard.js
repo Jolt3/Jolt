@@ -2,34 +2,34 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import { DashboardThree } from "../components/Dashboard/DashboardThree";
 import placeholder from '../assets/img/placeholder.jpeg';
+import AccountBalanceChart from '../components/Dashboard/AccountBalance';
 
 export const Dashboard = () => {
-    const items = [
-        {
-            title: "Placeholder",
-            description: "This is a test",
-            imgUrl: placeholder,
-        },
-        {
-            title: "Placeholder",
-            description: "This is a test",
-            imgUrl: placeholder,
-        },
-        {
-            title: "Placeholder",
-            description: "This is a test",
-            imgUrl: placeholder,
-        }
-    ];
+    // const items = [
+    //     {
+    //         title: "Placeholder",
+    //         description: "This is a test",
+    //         imgUrl: placeholder,
+    //     },
+    //     {
+    //         title: "Placeholder",
+    //         description: "This is a test",
+    //         imgUrl: placeholder,
+    //     },
+    //     {
+    //         title: "Placeholder",
+    //         description: "This is a test",
+    //         imgUrl: placeholder,
+    //     }
+    // ];
 
     return (
         <section className='dash'>
             <Container className='masterDash'>
                 <Row className='dashTop'>
-                    <h2 className='dashTop-head'>Some shit title IDK</h2>
-                    <p>Some Lorem-Fucking-Ipsum Bullshit</p>
+                    <AccountBalanceChart></AccountBalanceChart>
                 </Row>
-                <Col size={12} className='dashTest'>
+                {/* <Col size={12} className='dashTest'>
                     <Row className='dashBottom'>
                         {
                             items.map((item, index) => {
@@ -42,7 +42,7 @@ export const Dashboard = () => {
                             })
                         }
                     </Row>
-                </Col>
+                </Col> */}
             </Container>
         </section>
     )
