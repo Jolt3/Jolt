@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from './Link';
+import AuthService from '../utils/auth'
+
+function logout() {
+    AuthService.logout()
+};
 // import search from '../assets/img/icons8-search-50.png';
 
 // <a target="_blank" href="https://icons8.com/icon/7695/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
@@ -18,8 +23,8 @@ export const Header = ({placeholder, data}) => {
         }
     };
 
-        const userName = window.userInfo.username
-        console.log(userName)
+        // const userName = window.userInfo.username
+        // console.log(userName)
 
     return (
         <div className='search'>
@@ -40,10 +45,10 @@ export const Header = ({placeholder, data}) => {
             )}
               <Link /> */}
             <div>
-                <h1 className='header-head'>Welcome back, {userName}  </h1>
+                <h1 className='header-head'>Welcome back, </h1>
             </div>
             <div className='log-out'>
-                <button>
+                <button onClick={logout}>
                     <span className='top'>Log Out</span>
                 </button>
             </div>

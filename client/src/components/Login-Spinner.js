@@ -43,7 +43,7 @@ const loginHandler = async () => {
 
     } catch (e) {
         console.error(e);
-        setMessage("Email or Password Invalid")
+        setMessage("Email or Password Invalid!")
         
     }
    
@@ -94,9 +94,10 @@ const registerHandler = async () => {
 									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
 									<i className="input-icon uil uil-lock-alt"></i>
 								</div>
-                                <Link onClick={loginHandler} className="btn mt-4">Login</Link> 
+                                <Link onClick={loginHandler} className="btn mt-4">Login</Link>
                             
                             </div>
+                            <p style={{color: 'red'}}>{message}</p>
                         </div>
                     </div>
                     <div className="card-back">
@@ -115,11 +116,11 @@ const registerHandler = async () => {
  									<i className="input-icon uil uil-at"></i>
  								</div>
  								<div className="form-group mt-2">
- 									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password"/>
+ 									<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="form-style" placeholder="Password: Must have at least 5 characters"/>
  									<i className="input-icon uil uil-lock-alt"></i>
  								</div>
  									<Link to='/dashboard' onClick={registerHandler} className="btn mt-4">Register</Link>
-                                
+
  				      			</div>
  			      			</div>
  			      		</div>
