@@ -24,8 +24,6 @@ export const Budgeting = () => {
             <Container className='budget-main'>
                 <Col className='budget-left'>
                     <DoughnutChart />
-                    <h2 className='left-head'>Budget</h2>
-                    <p className='left-content'>Here is where we will put content</p>
                 </Col>
                 <Col size={7} className='budget-right'>
                     <Row className='right-content'>
