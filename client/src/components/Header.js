@@ -1,5 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from './Link';
+import AuthService from '../utils/auth'
+
+function logout() {
+    AuthService.logout()
+};
 // import search from '../assets/img/icons8-search-50.png';
 
 // <a target="_blank" href="https://icons8.com/icon/7695/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
@@ -17,6 +22,13 @@ export const Header = ({placeholder, data}) => {
             setFilteredData(newFilter);
         }
     };
+
+        
+
+        useEffect(() => {
+            const userName = sessionStorage.getItem('username')
+            document.getElementById('username').textContent = userName
+        }, []);
 
     return (
         <div className='search'>
@@ -37,10 +49,10 @@ export const Header = ({placeholder, data}) => {
             )}
               <Link /> */}
             <div>
-                <h1 className='header-head'>Welcome back, *First Name*</h1>
+                <h1 className='header-head'>Welcome back, <span id='username'></span> </h1>
             </div>
             <div className='log-out'>
-                <button>
+                <button onClick={logout}>
                     <span className='top'>Log Out</span>
                 </button>
             </div>

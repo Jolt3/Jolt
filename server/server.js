@@ -13,6 +13,7 @@ const { v4: uuidv4 } = require('uuid');
 const bodyParser = require('body-parser');
 const moment = require('moment');
 const cors = require('cors');
+const User = require('./models/Users')
 
 const APP_PORT = process.env.APP_PORT || 8000;
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
@@ -96,6 +97,17 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
+//Gets User Data
+app.get('/api/user/:username', (req, res, next) => {
+  User.findOne({username: req.params.username})
+  .then((user) =>
+        !user
+          ? res.status(404).json({ message: 'No user with that ID' })
+          : res.json(user)
+      )
+      .catch((err) => res.status(500).json(err));
 });
 
 
