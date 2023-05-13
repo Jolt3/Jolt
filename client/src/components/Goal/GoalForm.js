@@ -34,7 +34,6 @@ const GoalForm = ({ onSave }) => {
 
     const formStlye = {
         borderRadius: '8px',
-        border: '1px solid #1e1e1e',
         padding: '3%',
         marginBottom: '6vh'
     }
@@ -74,7 +73,7 @@ const GoalForm = ({ onSave }) => {
                 </div>
             </div>
 
-            <button type="submit">Save Goal</button>
+            <button className='goal-button' type="submit">Save Goal</button>
         </form>
     );
 };

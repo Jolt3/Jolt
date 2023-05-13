@@ -24,10 +24,8 @@ export const Goals = () => {
             <Container className='goal-main'>
                 <Col className='goal-left'>
                     <GoalList />
-                    <h2 className='left-head'>Goals</h2>
-                    <p className='left-content'>Here is where we will put content</p>
                 </Col>
-                <Col size={7} className='goal-right'>
+                {/* <Col size={7} className='goal-right'>
                     <Row className='right-content'>
                         {
                             items.map((item, index) => {
@@ -40,7 +38,7 @@ export const Goals = () => {
                             })
                         }
                     </Row>
-                </Col>
+                </Col> */}
             </Container>
         </section>
     )

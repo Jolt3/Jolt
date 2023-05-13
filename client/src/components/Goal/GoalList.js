@@ -40,30 +40,30 @@ const GoalList = () => {
       border: '1px solid #1e1e1e',
       listStyle: 'none',
       padding: '2%',
-      borderRadius: '8px'
+      borderRadius: '8px',
     }
 
     const container = {
-        position:'absolute',
+        // position:'absolute',
         display: 'grid',
-        gridtemplateColumns: '1fr 1fr',
+        gridtemplateColumns: '1fr 2fr',
         width:'70vw',
         zIndex:'9000'
     }
 
     return (
         <>
-        <div style={{container}}id="account-grid">
+        <div className="goal-list-main" id="account-grid">
 
             <div>
-                <div style={{ marginTop: '25px', marginLeft: '5%', background: '#fff',  width: '30vw', padding: '3%', borderRadius:'8px'} }>
-                    <h2 style={{textAlign:'center', marginBottom:'4vh'}}>Account Balance: ${accountBalance}</h2>
+                <div style={{ background: '#fff',  width: '35vw', paddingBottom:'10%', padding: '3%', borderRadius:'20px'}}>
+                    <h2 style={{textAlign:'left', marginBottom:'4vh'}}>Account Balance: ${accountBalance}</h2>
                     <GoalForm onSave={handleGoalSave} />
                 </div>
             </div>
                 <div>
-                        <div style={ulStyle}>
-                            <h2 style={{marginBottom:'3vh'}}>Saved Goals</h2>
+                        <div style={{ background: '#fff',  width: '47vw', padding: '3%', borderRadius:'20px', marginLeft:'5%'}}>
+                            <h2 style={{textAlign:'left', marginBottom:'4vh'}}>My Goals</h2>
                             <ul style={{listStyle:'none'}}>
                                 {goals.map((goal, index) => (
                                     <li key={index}>
