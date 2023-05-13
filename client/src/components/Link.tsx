@@ -69,8 +69,8 @@ const Link = () => {
         });
 
         //Assigns Access Token to DB
-        const accessToken = data._access_token;
-
+        const accessToken = data.access_token;
+        console.log(accessToken)
         
         getTransactions()
         getBalance()
