@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import {Navigation} from './Navigation';
 import {Header} from './Header';
@@ -40,6 +40,22 @@ export const Master = () => {
     const pageSwitch = (page) => {
         setCurrentPage(page)
     }
+    const getUser = async () => {
+        const userName = sessionStorage.getItem('username');
+        try {
+          const userData = await fetch(`/api/user/${userName}`, { method: 'GET' });
+          const response = await userData.json();
+          window.userInfo = response;
+          console.log(window.userInfo)
+        } catch (error) {
+          // handle the error here
+          console.error('Error fetching user data:', error);
+        }
+    }
+
+    useEffect( () => {
+        getUser()
+    }, [])
 
     return (
         <Container className='master'>
