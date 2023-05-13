@@ -20,6 +20,8 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { ProtectedRoute } from './routes/protectedRoutes';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { ExpensesJr } from './components/ExpensesJr';
+import Bucket from "./components/Bucket"
 import {Master} from './components/Master-Dash';
 
 // Construct our main GraphQL API endpoint
@@ -45,8 +47,6 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
-
 
 
 function App() {
@@ -128,34 +128,34 @@ function App() {
 
     return (
       <ApolloProvider client={client}>
-        <Router>
-        <div className="App">
-            
+      <Router>
+      <div className="App">
           
-          <Routes>
-              <Route
-                path='/'
-                element={<Start />}
-              />
+        
+        <Routes>
             <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <Navigation />
-                    <Header placeholder='Search Here' data={Data}/>
-                  {/* <Dashboard /> */}
-                  <GoalList />
-
-                  <Master />n
-                </ProtectedRoute>
-              }
+              path='/'
+              element={<Start />}
             />
-          </Routes>
-        </div>
-        </Router>
-      </ApolloProvider>
-    );
-  }
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                {/* <Navigation /> */}
+                  {/* <Header placeholder='Search Here' data={Data}/> */}
+                {/* <Dashboard /> */}
+                {/* <GoalList /> */}
+
+                <Master />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </div>
+      </Router>
+    </ApolloProvider>
+  );
+}
   
   export default App;
   

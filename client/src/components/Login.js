@@ -17,7 +17,7 @@ export const Start = () => {
         <Container className='start-master' style={{backgroundImage:`url(${Vector})`, backgroundRepeat: 'no-repeat', position: 'absolute', zIndex: '-999', width:'100%'}}>
         {/* <Container className='start-master'> */}
             <Col className='start-left'>
-                <h1 className='start-head'>Welcome to JOLT</h1>
+                <h1 className='start-head'>Hi, we're JOLT</h1>
                 <div className='start-desc-container'>
                     <p className='start-desc'>A lightning-fast option to jump-start your budgeting</p>
                 </div>
