@@ -43,7 +43,7 @@ const GoalForm = ({ onSave }) => {
             <div className="inputContainer">
                 <div>
                     <h3>Goal Name</h3>
-                    <input
+                    <input className='input-container'
                         type="text"
                         value={goalName}
                         onChange={handleNameChange}
@@ -54,7 +54,7 @@ const GoalForm = ({ onSave }) => {
             <div className="inputContainer">
                 <div>
                     <h3>Current</h3>
-                    <input
+                    <input className='input-container'
                         type="number"
                         value={goalAmount}
                         onChange={handleGoalAmount}
@@ -65,7 +65,7 @@ const GoalForm = ({ onSave }) => {
             <div className="inputContainer">
                 <div>
                     <h3>Goal</h3>
-                    <input
+                    <input className='input-container'
                         type="number"
                         value={maxAmount}
                         onChange={handleMaxAmount}
@@ -73,7 +73,7 @@ const GoalForm = ({ onSave }) => {
                 </div>
             </div>
 
-            <button className='goal-button' type="submit">Save Goal</button>
+            <button className='goal-button' type="submit">Save</button>
         </form>
     );
 };
