@@ -39,6 +39,7 @@ class AuthService {
 
   logout() {
     sessionStorage.removeItem('id_token');
+    sessionStorage.removeItem('username')
     window.location.reload();
   }
 }
