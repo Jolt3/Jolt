@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import { DashboardThree } from "../components/Dashboard/DashboardThree";
 import placeholder from '../assets/img/placeholder.jpeg';
+import AccountBalanceChart from '../components/Dashboard/AccountBalance';
 
 export const Dashboard = () => {
     const items = [
@@ -26,7 +27,7 @@ export const Dashboard = () => {
         <section className='dash'>
             <Container className='masterDash'>
                 <Row className='dashTop'>
-                    <h2 className='dashTop-head'>Some shit title IDK</h2>
+                    <AccountBalanceChart className='dashTop-head'></AccountBalanceChart>
                     <p>Some Lorem-Fucking-Ipsum Bullshit</p>
                 </Row>
                 <Col size={12} className='dashTest'>

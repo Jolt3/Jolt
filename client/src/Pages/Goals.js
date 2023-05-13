@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import { GoalsJr } from '../components/Dashboard/GoalsJr';
+import GoalList from '../components/Goal/GoalList';
 
 export const Goals = () => {
     const items = [
@@ -22,6 +23,7 @@ export const Goals = () => {
         <section className='goal-master'>
             <Container className='goal-main'>
                 <Col className='goal-left'>
+                    <GoalList />
                     <h2 className='left-head'>Goals</h2>
                     <p className='left-content'>Here is where we will put content</p>
                 </Col>

@@ -56,7 +56,7 @@ const GoalList = () => {
         <div style={{container}}id="account-grid">
 
             <div>
-                <div style={{ marginTop: '25px', marginLeft: '250px', background: '#fff',  width: '30vw', padding: '3%', borderRadius:'8px'} }>
+                <div style={{ marginTop: '25px', marginLeft: '5%', background: '#fff',  width: '30vw', padding: '3%', borderRadius:'8px'} }>
                     <h2 style={{textAlign:'center', marginBottom:'4vh'}}>Account Balance: ${accountBalance}</h2>
                     <GoalForm onSave={handleGoalSave} />
                 </div>

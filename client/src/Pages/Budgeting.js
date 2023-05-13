@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import { BudgetingJr } from '../components/Dashboard/BudgetingJr';
+import DoughnutChart from '../components/Bucket';
 
 export const Budgeting = () => {
     const items = [
@@ -22,6 +23,7 @@ export const Budgeting = () => {
         <section className='budget-master'>
             <Container className='budget-main'>
                 <Col className='budget-left'>
+                    <DoughnutChart />
                     <h2 className='left-head'>Budget</h2>
                     <p className='left-content'>Here is where we will put content</p>
                 </Col>
