@@ -10,64 +10,69 @@ const intervals = {
 };
 
 const AccountBalanceChart = () => {
-
     const chartRef = useRef(null);
     // Renders the page with the 1 month option selected
     const [currentInterval, setCurrentInterval] = useState('1 Month');
 
     useEffect(() => {
-        // Gets the user balance as well as a min and max vaule
-        let balance = [100, 120, 80, 200, 150, 300, 250, 400, 350, 500, 450, 600, 550, 700, 650, 800, 750, 900, 850, 1000, 950, 1100, 1050, 1200, 1150, 1300, 1250, 1400, 1350, 1500, 1450, 1600, 1550, 1700, 1650]; // Add User account balances
-        // Defines months as whichever interval is selected
+        // Defines interval as whichever interval is selected
         let interval = intervals[currentInterval];
-
-        // Assigns the labels to a formatted date based on whichever time interval is selected
         let labels = [];
-        if (interval === 30) {
-            const today = new Date()
-            for (let i = interval - 1; i >= 0; i--) {
-                const date = new Date(today);
-                date.setDate(today.getDate() - i);
-                const formattedDate = formatDate(date)
-                labels.push(formattedDate)
-
-                function formatDate(date) {
-                    const month = date.toLocaleString('en-US', { month: 'short' });
-                    const day = date.toLocaleString('en-US', { day: 'numeric' });
-                    return `${day} ${month}`
-                }
-            }
-        } else {
-            for (let i = 0; i < interval; i++) {
-                const date = new Date();
-                date.setMonth(date.getMonth() - (interval - i - 1));
-                const formattedDate = formatDate(date);
-                labels.push(formattedDate);
-
-                function formatDate(date) {
-                    const month = date.toLocaleString('en-US', { month: 'short' });
-                    const year = date.toLocaleString('en-US', { year: '2-digit' });
-                    return `${month} ${year}`
-                }
-            }
-        }
-        console.log(labels);
-
 
         // Defines the chart data
         let data = {
             datasets: [
                 {
                     label: 'Account balance',
-                    data: balance.slice(balance.length - interval),
+                    data: [],
                     borderColor: 'green',
                     backgroundColor: '#00ff0080',
                     borderWidth: 3,
                     radius: 3,
                 },
             ],
-            labels: labels
+            labels: [],
         };
+        
+        // Creates a daily amount to display for the one month option
+        if (interval === 30) {
+            let oneMonthBalance = [100, 100, 80, 930, 860, 810, 378, 378, 378, 336, 1186, 1124, 1071, 991, 776, 776, 1616, 1316, 1268, 1245, 1245, 1245, 1184, 2034, 2034, 2004, 1961, 1611, 1579, 1229]; // Add User account balances
+            const today = new Date();
+            for (let i = interval - 1; i >= 0; i--) {
+                const date = new Date(today);
+                date.setDate(today.getDate() - i);
+                const formattedDate = formatDate(date)
+                labels.push(formattedDate)
+
+                // Formats the date for the graphs x-axis to display the day, month and year
+                function formatDate(date) {
+                    const month = date.toLocaleString('en-US', { month: 'short' });
+                    const day = date.toLocaleString('en-US', { day: 'numeric' });
+                    return `${day} ${month}`
+                }
+            }
+            data.labels = labels;
+            data.datasets[0].data = oneMonthBalance;
+            // Handles the 3 month, 6 month and 1 year option
+        } else {
+            const monthlyBalance = [1351, 581, 953, 874, 523, 957, 501, 620, 311, 100, 1616, 2034] // Add User account balances
+            for (let i = 0; i < interval; i++) {
+                const date = new Date();
+                date.setMonth(date.getMonth() - (interval - i - 1));
+                const formattedDate = formatDate(date);
+                labels.push(formattedDate);
+
+                // Formats the date for the graphs x-axis to show the month and year
+                function formatDate(date) {
+                    const month = date.toLocaleString('en-US', { month: 'short' });
+                    const year = date.toLocaleString('en-US', { year: 'numeric' });
+                    return `${month} ${year}`
+                }
+            }
+            data.labels = labels
+            // Shows data based on which interval you have selected
+            data.datasets[0].data = monthlyBalance.slice(-interval)
+        }
 
         // Defines the chart configuration
         let config = {
