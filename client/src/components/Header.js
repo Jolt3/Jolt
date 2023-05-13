@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from './Link';
 // import search from '../assets/img/icons8-search-50.png';
 
@@ -17,6 +17,9 @@ export const Header = ({placeholder, data}) => {
             setFilteredData(newFilter);
         }
     };
+
+        const userName = window.userInfo.username
+        console.log(userName)
 
     return (
         <div className='search'>
@@ -37,7 +40,7 @@ export const Header = ({placeholder, data}) => {
             )}
               <Link /> */}
             <div>
-                <h1 className='header-head'>Welcome back, *First Name*</h1>
+                <h1 className='header-head'>Welcome back, {userName}  </h1>
             </div>
             <div className='log-out'>
                 <button>
