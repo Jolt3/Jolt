@@ -26,12 +26,16 @@ const GoalList = () => {
     const removeGoal = (index) => {
         const updatedGoals = [...goals]
         updatedGoals.splice(index, 1);
-        setGoals(updatedGoals)
+        setGoals(updatedGoals);
+
+        const goalAmount = goals[index].amount;
+        const updatedBalance = accountBalance + goalAmount;
+        setAccountBalance(updatedBalance);
     };
 
     const addFunds = (index) => {
         setShowAddFundsForm(index)
-    }
+    };
 
     const handleFundsFormSubmit = (e, index) => {
         e.preventDefault();
