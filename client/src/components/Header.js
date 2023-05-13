@@ -23,8 +23,12 @@ export const Header = ({placeholder, data}) => {
         }
     };
 
-        // const userName = window.userInfo.username
-        // console.log(userName)
+        
+
+        useEffect(() => {
+            const userName = sessionStorage.getItem('username')
+            document.getElementById('username').textContent = userName
+        }, []);
 
     return (
         <div className='search'>
@@ -45,7 +49,7 @@ export const Header = ({placeholder, data}) => {
             )}
               <Link /> */}
             <div>
-                <h1 className='header-head'>Welcome back, </h1>
+                <h1 className='header-head'>Welcome back, <span id='username'></span> </h1>
             </div>
             <div className='log-out'>
                 <button onClick={logout}>
