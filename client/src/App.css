@@ -265,10 +265,12 @@ margin-top: 25px;
   width: 100%;
   color: #fff;
   margin-left: 55vw;
+  margin-top: 2vh;
 }
 
 .log-out {
   margin-left: 5vw;
+  margin-top: 2vh;
 }
 
 .log-out button {
