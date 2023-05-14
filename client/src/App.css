@@ -627,9 +627,9 @@ h4 {
   display: flex;
   width: 95%;
   min-width: 95%;
-  height: 98%;
-  min-height: 98%;
-  max-height: 98%;
+  height: auto;
+  /* min-height: 98%;
+  max-height: 98%; */
   /* background-color: #6ec0e4; */
   /* background-color: #5DF01D; */
   /* background-color: #ffeba7; */
@@ -638,7 +638,7 @@ h4 {
   margin-left: 2.5%;
   border-radius: 20px;
   margin-top: 2%;
-  margin-bottom: 2%;
+  /* margin-bottom: 2%; */
   text-align: center;
   justify-content: center;
 }
@@ -695,8 +695,8 @@ h4 {
 }
 
 .account-chart-main {
-  width: 90%;
-  height: auto;
+  width: 85%;
+  height: 50%;
 }
 
 .account-chart-buttons {
@@ -1201,6 +1201,50 @@ h4 {
     width: 95%;
     max-width: none;
     margin-top: 2vh;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-master {
+    margin-left: 0%;
+    width: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-main {
+    margin-left: 0%;
+    height: 40vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-left {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    height: 40vh
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-list {
+    position: relative;
+    font-size: 1.5vw;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .center-head {
+    position: relative;
     margin-left: 0;
   }
 }
