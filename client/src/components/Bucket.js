@@ -102,37 +102,37 @@ const DoughnutChart = () => {
         setShowAddBucket(!showAddBucket)
     }
     return (
-        <div>
-            {errorMessage && <p>{errorMessage}</p>}
-            <div style={{marginLeft: '15%', width: '70%'}}>
+        <div className="goal-list-main">
+            <div className="budgetL">
                 <Doughnut  data={data} options={options} />
             </div>
-            <div>
+            <div className="budgetR">
                 {buckets.slice(1).map((bucket, index) => (
-                    <div key={index}>
+                    <div style={{textAlign:'left', fontSize:'1.5vw', display:'block', width:'20%', marginBottom:'1%'}} key={index}>
                         {bucket.name} - {bucket.amount}
-                        <button onClick={() => removeBucket(index + 1)}>Remove Bucket</button>
+                        <button className='goal-button' style={{marginLeft:'5%'}} onClick={() => removeBucket(index + 1)}>Delete</button>
                     </div>
                 ))}
                 {!showAddBucket && (
-                    <button onClick={toggleAddBucket}>Add Bucket</button>
+                    <button className="goal-button" onClick={toggleAddBucket}>Add Bucket</button>
                 )}
                 {showAddBucket && (
                     <div>
-                        <input
+                        <input className="budget-container-2"
                             type="text"
                             value={newBucketName}
                             onChange={(e) => setNewBucketName(e.target.value)}
                             placeholder="Bucket Name"
                         />
-                        <input
+                        <input className="budget-container-3"
                             type="number"
                             value={newBucketAmount}
                             onChange={(e) => setNewBucketAmount(Number(e.target.value))}
                             placeholder="Amount to Add"
                         />
-                        <button onClick={addBucket}>Confirm</button>
-                        <button onClick={toggleAddBucket}>Cancel</button>
+                        {errorMessage && <p>{errorMessage}</p>}
+                        <button className="budget-add goal-button-3" onClick={addBucket}>Confirm</button>
+                        <button className="budget-remove goal-button-2" onClick={toggleAddBucket}>Cancel</button>
                     </div>
                 )}
             </div>

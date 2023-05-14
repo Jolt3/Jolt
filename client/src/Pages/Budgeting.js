@@ -4,20 +4,20 @@ import { BudgetingJr } from '../components/Dashboard/BudgetingJr';
 import DoughnutChart from '../components/Bucket';
 
 export const Budgeting = () => {
-    const items = [
-        {
-            title: "Budget-Placeholder",
-            description: "This is a test",
-        },
-        {
-            title: "Budget-Placeholder",
-            description: "This is a test",
-        },
-        {
-            title: "Budget-Placeholder",
-            description: "This is a test",
-        }
-    ];
+    // const items = [
+    //     {
+    //         title: "Budget-Placeholder",
+    //         description: "This is a test",
+    //     },
+    //     {
+    //         title: "Budget-Placeholder",
+    //         description: "This is a test",
+    //     },
+    //     {
+    //         title: "Budget-Placeholder",
+    //         description: "This is a test",
+    //     }
+    // ];
 
     return (
         <section className='budget-master'>
@@ -25,7 +25,7 @@ export const Budgeting = () => {
                 <Col className='budget-left'>
                     <DoughnutChart/>
                 </Col>
-                <Col size={7} className='budget-right'>
+                {/* <Col size={7} className='budget-right'>
                     <Row className='right-content'>
                         {
                             items.map((item, index) => {
@@ -38,7 +38,7 @@ export const Budgeting = () => {
                             })
                         }
                     </Row>
-                </Col>
+                </Col> */}
             </Container>
         </section>
     )
