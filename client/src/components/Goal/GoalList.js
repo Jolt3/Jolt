@@ -57,7 +57,7 @@ const GoalList = () => {
         <>
         <div className="goal-list-main" id="account-grid">
             {errorMessage && <p>{errorMessage}</p>}
-            <div>
+        
                 <div style={{ background: 'whitesmoke',  width: '35vw', paddingBottom:'10%', padding: '3%', borderRadius:'20px'}}>
                     <h2 style={{textAlign:'left', marginBottom:'4vh', fontSize:'1.5vw'}}>Account Balance: ${accountBalance}</h2>
                     <GoalForm onSave={handleGoalSave} />
@@ -91,6 +91,7 @@ const GoalList = () => {
                         </ul>
                     </div>
                 </div>
+           
             </div>
         </>
     );
