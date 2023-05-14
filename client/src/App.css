@@ -917,6 +917,26 @@ h4 {
   margin-bottom: 1%;
 }
 
+.goalL {
+  background: whitesmoke; 
+  width: 80vw; 
+  padding: 3%; 
+  border-radius: 20px;
+}
+
+.goalR {
+  background: whitesmoke; 
+  width: 48vw; 
+  height: 39.5vw; 
+  min-height: 
+  39.5vw; 
+  max-height: 39.5vw; 
+  padding: 3%; 
+  border-radius: 20px; 
+  margin-left: 5%; 
+  overflow: scroll;
+}
+
 /* .goal-right {
   width: 60%;
   height: 100%;
@@ -1119,5 +1139,29 @@ h4 {
   .dash {
     margin-left: 5%;
     height: 40vh
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .goal-list-main {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .goalL {
+    width: 95%;
+    max-width: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .goalR {
+    width: 95%;
+    max-width: none;
+    margin-top: 2vh;
+    margin-left: 0;
   }
 }

@@ -57,12 +57,14 @@ const GoalList = () => {
     return (
         <div className="goal-list-main" id="account-grid">
             {errorMessage && <p>{errorMessage}</p>}
-                <div style={{ background: 'whitesmoke',  width: '35vw', padding: '3%', borderRadius:'20px'}}>
+                {/* <div className="goalL" style={{ background: 'whitesmoke',  width: '35vw', padding: '3%', borderRadius:'20px'}}> */}
+                <div className="goalL" >
                     <h2 style={{textAlign:'left', marginBottom:'4vh', fontSize:'1.5vw'}}>Account Balance: ${accountBalance}</h2>
                     <GoalForm onSave={handleGoalSave} />
                 </div>
                 <div>
-                        <div style={{ background: 'whitesmoke',  width: '48vw', height:'39.5vw', minHeight:'39.5vw', maxHeight:'39.5vw', padding: '3%', borderRadius:'20px', marginLeft:'5%', overflow:'scroll'}}>
+                        {/* <div className="goalR" style={{ background: 'whitesmoke',  width: '48vw', height:'39.5vw', minHeight:'39.5vw', maxHeight:'39.5vw', padding: '3%', borderRadius:'20px', marginLeft:'5%', overflow:'scroll'}}> */}
+                        <div className="goalR" >
                             <h2 style={{textAlign:'left', marginBottom:'4vh', fontSize:'1.5vw'}}>My Goals</h2>
                             <ul style={{listStyle:'none'}}>
                                 {goals.map((goal, index) => (
