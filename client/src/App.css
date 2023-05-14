@@ -265,10 +265,12 @@ margin-top: 25px;
   width: 100%;
   color: #fff;
   margin-left: 55vw;
+  margin-top: 2vh;
 }
 
 .log-out {
   margin-left: 5vw;
+  margin-top: 2vh;
 }
 
 .log-out button {
@@ -314,6 +316,7 @@ margin-top: 25px;
 } */
 
 /* Start/Login CSS */
+
 .start-master {
   width: 100%;
   height: 100vh;
@@ -625,6 +628,8 @@ h4 {
   width: 95%;
   min-width: 95%;
   height: auto;
+  /* min-height: 98%;
+  max-height: 98%; */
   /* background-color: #6ec0e4; */
   /* background-color: #5DF01D; */
   /* background-color: #ffeba7; */
@@ -633,7 +638,7 @@ h4 {
   margin-left: 2.5%;
   border-radius: 20px;
   margin-top: 2%;
-  margin-bottom: 2%;
+  /* margin-bottom: 2%; */
   text-align: center;
   justify-content: center;
 }
@@ -690,8 +695,8 @@ h4 {
 }
 
 .account-chart-main {
-  width: 95%;
-  height: auto;
+  width: 85%;
+  height: 50%;
 }
 
 .account-chart-buttons {
@@ -912,6 +917,26 @@ h4 {
   margin-bottom: 1%;
 }
 
+.goalL {
+  background: whitesmoke; 
+  width: 80vw; 
+  padding: 3%; 
+  border-radius: 20px;
+}
+
+.goalR {
+  background: whitesmoke; 
+  width: 48vw; 
+  height: 39.5vw; 
+  min-height: 
+  39.5vw; 
+  max-height: 39.5vw; 
+  padding: 3%; 
+  border-radius: 20px; 
+  margin-left: 5%; 
+  overflow: scroll;
+}
+
 /* .goal-right {
   width: 60%;
   height: 100%;
@@ -1001,10 +1026,9 @@ h4 {
 /* Expense CSS */
 
 .expense-master {
-  width: 89%;
-  height: 90%;
-  min-height: 90%;
-  margin-left: 11%;
+  width: 90vw;
+  height: 80vh;
+  margin-left: 10vw;
 }
 
 .expense-main {
@@ -1017,10 +1041,12 @@ h4 {
 
 .expense-left {
   background-color: whitesmoke;
-  width: 50vw;
-  height: 80vh;
+  width: 100%;
+  height: 98%;
+  max-height: 98%;
+  min-height: 98%;
   margin-top: 2%;
-  margin-left: 2%;
+  margin-left: 2.5%;
   padding: 3rem;
   margin-right: 2%;
   border-radius: 20px;
@@ -1029,6 +1055,7 @@ h4 {
 #expense-list {
   margin: 0 auto;
   border-spacing: 1rem;
+  overflow: scroll;
 }
 
 #expense-list tr:first-child {
@@ -1052,9 +1079,10 @@ h4 {
   text-decoration: underline;
 }
 .center-head{
-  text-align: center;
+  text-align: left;
   color: navy;
   margin-bottom: 2vh;
+  margin-left: 10vw;
 }
 
 /* Prompt CSS */
@@ -1102,7 +1130,121 @@ h4 {
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    overflow: scroll;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   [class*="media"] {
     display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  .dash {
+    margin-left: 5%;
+    height: 40vh
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .goal-list-main {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .goalL {
+    width: 95%;
+    max-width: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .goalR {
+    width: 95%;
+    max-width: none;
+    margin-top: 2vh;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .budget-master {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .budget-main {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .budget-left {
+    width: 95%;
+    max-width: none;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .budget-right {
+    width: 95%;
+    max-width: none;
+    margin-top: 2vh;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-master {
+    margin-left: 0%;
+    width: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-main {
+    margin-left: 0%;
+    height: 40vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-left {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    height: 40vh
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-list {
+    position: relative;
+    font-size: 1.5vw;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .center-head {
+    position: relative;
+    margin-left: 0;
   }
 }

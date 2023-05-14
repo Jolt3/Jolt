@@ -43,8 +43,9 @@ const GoalList = () => {
         const fundsAdded = parseInt(fundsToAdd)
         if (fundsAdded > accountBalance) {
             setErrorMessage('Insufficent Funds');
-            return
+            return 
         }
+
         updatedGoals[index].amount += fundsAdded;
         setGoals(updatedGoals);
         setShowAddFundsForm(-1);
@@ -55,13 +56,14 @@ const GoalList = () => {
 
     return (
         <div className="goal-list-main" id="account-grid">
-            {errorMessage && <p>{errorMessage}</p>}
-                <div style={{ background: 'whitesmoke',  width: '35vw', padding: '3%', borderRadius:'20px'}}>
+                {/* <div className="goalL" style={{ background: 'whitesmoke',  width: '35vw', padding: '3%', borderRadius:'20px'}}> */}
+                <div className="goalL" >
                     <h2 style={{textAlign:'left', marginBottom:'4vh', fontSize:'1.5vw'}}>Account Balance: ${accountBalance}</h2>
                     <GoalForm onSave={handleGoalSave} />
                 </div>
                 <div>
-                        <div style={{ background: 'whitesmoke',  width: '48vw', height:'39.5vw', minHeight:'39.5vw', maxHeight:'39.5vw', padding: '3%', borderRadius:'20px', marginLeft:'5%', overflow:'scroll'}}>
+                        {/* <div className="goalR" style={{ background: 'whitesmoke',  width: '48vw', height:'39.5vw', minHeight:'39.5vw', maxHeight:'39.5vw', padding: '3%', borderRadius:'20px', marginLeft:'5%', overflow:'scroll'}}> */}
+                        <div className="goalR" >
                             <h2 style={{textAlign:'left', marginBottom:'4vh', fontSize:'1.5vw'}}>My Goals</h2>
                             <ul style={{listStyle:'none'}}>
                                 {goals.map((goal, index) => (
@@ -72,6 +74,7 @@ const GoalList = () => {
                                         <div style={{marginTop:'2vh'}}>
                                         <button className="budget-add goal-button-3" onClick={() => addFunds(index)}>Add Funds</button>
                                         <button className="budget-remove goal-button-2" style={{ marginLeft: '2%' }} onClick={() => removeGoal(index)}>Remove</button>
+                                        {errorMessage && <p>{errorMessage}</p>}
                                     </div>
                                     {showAddFundsForm === index && (
                                         <form onSubmit={(e) => handleFundsFormSubmit(e, index)}>
