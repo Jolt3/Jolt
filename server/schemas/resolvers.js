@@ -43,9 +43,13 @@ const resolvers = {
       return { token, user };
     },
    
-      }
+    updateUser:async (parent, {access_token}) => {
+      const user = await User.findOneAndUpdate({access_token});
+      return user;
+    }
+  }
       
-    };
+};
   
 
 module.exports = resolvers;

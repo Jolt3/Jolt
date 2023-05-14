@@ -24,4 +24,11 @@ export const ADD_USER = gql`
   }
 `;
 
+export const UPDATE_USER = gql`
+mutation updateUser($access_token: String!){
+  updateUser(access_token: $access_token){
+    user{access_token}
+  }
+}
+` 
 
