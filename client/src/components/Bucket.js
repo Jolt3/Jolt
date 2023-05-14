@@ -102,15 +102,15 @@ const DoughnutChart = () => {
         setShowAddBucket(!showAddBucket)
     }
     return (
-        <div >
+        <div>
             {errorMessage && <p>{errorMessage}</p>}
-            <div>
+            <div style={{marginLeft: '15%', width: '70%'}}>
                 <Doughnut  data={data} options={options} />
             </div>
             <div>
                 {buckets.slice(1).map((bucket, index) => (
                     <div key={index}>
-                        {bucket.name} - ${bucket.amount}
+                        {bucket.name} - {bucket.amount}
                         <button onClick={() => removeBucket(index + 1)}>Remove Bucket</button>
                     </div>
                 ))}
