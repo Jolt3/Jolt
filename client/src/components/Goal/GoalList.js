@@ -43,8 +43,9 @@ const GoalList = () => {
         const fundsAdded = parseInt(fundsToAdd)
         if (fundsAdded > accountBalance) {
             setErrorMessage('Insufficent Funds');
-            return
+            return 
         }
+
         updatedGoals[index].amount += fundsAdded;
         setGoals(updatedGoals);
         setShowAddFundsForm(-1);

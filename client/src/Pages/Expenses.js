@@ -103,7 +103,7 @@ export const Expenses = () => {
             <Container className='expense-main'>
                 <Col className='expense-left'>
                     <h2 className='center-head'>Expenses</h2>
-                    <table id='expense-list'>
+                    <table className='expense-list' id='expense-list'>
                         <tr>
                             <th className='expense-header'>Date</th>
                             <th className='expense-header'>Name</th>
