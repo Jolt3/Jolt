@@ -612,7 +612,7 @@ h4 {
 .dash {
   width: 90vw;
   height: 80vh;
-  margin-left: 10vw;
+  margin-left: 10%;
 }
 
 .masterDash {
@@ -750,7 +750,7 @@ h4 {
   width: 89%;
   height: 90%;
   min-height: 90%;
-  margin-left: 10vw;
+  margin-left: 10%;
 }
 
 .goal-main {
@@ -919,7 +919,7 @@ h4 {
 
 .goalL {
   background: whitesmoke; 
-  width: 80vw; 
+  width: 30vw; 
   padding: 3%; 
   border-radius: 20px;
 }
@@ -970,7 +970,7 @@ h4 {
   width: 89%;
   height: 90%;
   min-height: 90%;
-  margin-left: 10.5vw;
+  margin-left: 10%;
 }
 
 .budget-main {
@@ -984,24 +984,23 @@ h4 {
 .budget-left {
   /* background-color: #63accd; */
   /* background-color: lightcyan; */
-  background-color: whitesmoke;
-  width: 50%;
-  min-width: 50%;
-  height: 70vh;
+  width: 95%;
+  min-width: 95%;
+  height: auto;
   margin-top: 2%;
   margin-left: 2%;
   margin-right: 2%;
   border-radius: 20px;
 }
 
-.budget-right {
+/* .budget-right {
   width: 60%;
   height: 100%;
   margin-top: 2%;
   margin-right: 2%;
   margin-bottom: 2%;
   border-radius: 20px;
-}
+} */
 
 .budgetThree {
   width: 100%;
@@ -1023,12 +1022,71 @@ h4 {
   margin-left: 2%;
 }
 
+.budgetL {
+  background: whitesmoke; 
+  width: 40%; 
+  padding: 3%; 
+  border-radius: 20px;
+}
+
+.budgetR {
+  display: block;
+  background: whitesmoke; 
+  width: 52%; 
+  height: 39.5vw; 
+  min-height: 
+  39.5vw; 
+  max-height: 39.5vw; 
+  padding: 3%; 
+  border-radius: 20px; 
+  margin-left: 3%; 
+  overflow: scroll;
+}
+
+.budget-container-2 {
+  width: 40%;
+  height: auto;
+  padding: 8px 15px;
+  font-weight: 300;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  outline: none;
+  color: #121212;
+  background-color: lightcyan;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.budget-container-3 {
+  width: 40%;
+  height: auto;
+  padding: 8px 15px;
+  font-weight: 300;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  outline: none;
+  color: #121212;
+  background-color: lightcyan;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 /* Expense CSS */
 
 .expense-master {
   width: 90vw;
   height: 80vh;
-  margin-left: 10vw;
+  margin-left: 10%;
 }
 
 .expense-main {
