@@ -945,7 +945,7 @@ h4 {
   width: 89%;
   height: 90%;
   min-height: 90%;
-  margin-left: 11%;
+  margin-left: 10.5vw;
 }
 
 .budget-main {
@@ -960,9 +960,9 @@ h4 {
   /* background-color: #63accd; */
   /* background-color: lightcyan; */
   background-color: whitesmoke;
-  width: 40%;
-  height: 90%;
-  padding-bottom: 50.25%;
+  width: 50%;
+  min-width: 50%;
+  height: 70vh;
   margin-top: 2%;
   margin-left: 2%;
   margin-right: 2%;

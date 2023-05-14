@@ -102,9 +102,9 @@ const DoughnutChart = () => {
         setShowAddBucket(!showAddBucket)
     }
     return (
-        <div >
+        <div>
             {errorMessage && <p>{errorMessage}</p>}
-            <div>
+            <div style={{marginLeft: '15%', width: '70%'}}>
                 <Doughnut  data={data} options={options} />
             </div>
             <div>
