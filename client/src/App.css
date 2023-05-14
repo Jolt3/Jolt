@@ -756,13 +756,6 @@ h4 {
   flex-direction: row;
 }
 
-.left-head {
-  margin-left: 2%;
-  padding-top: 2%;
-  /* color: #ffeba7; */
-  color: navy;
-}
-
 .left-content {
   margin-left: 2%;
 }
@@ -1023,44 +1016,45 @@ h4 {
 }
 
 .expense-left {
-  /* background-color: #5899b6; */
   background-color: whitesmoke;
-  width: 40%;
-  height: 90%;
-  padding-bottom: 50.25%;
+  width: 50vw;
+  height: 80vh;
   margin-top: 2%;
   margin-left: 2%;
+  padding: 3rem;
   margin-right: 2%;
   border-radius: 20px;
 }
 
-.expense-right {
-  width: 60%;
-  height: 100%;
-  margin-top: 2%;
-  margin-right: 2%;
-  margin-bottom: 2%;
-  border-radius: 20px;
+#expense-list {
+  margin: 0 auto;
+  border-spacing: 1rem;
 }
 
-.expenseThree {
-  width: 100%;
-  height: 40%;
-  /* background-color: #5899b6; */
-  background-color: whitesmoke;
-  margin-bottom: 3%;
-  padding-bottom: 22%;
-  border-radius: 20px;
+#expense-list tr:first-child {
+  margin-bottom: 3rem;
 }
 
-.expenseThree-title {
-  margin-left: 2%;
-  padding-top: 2%;
+#expense-list th {
+  width: 20%;
 }
 
-.expenseThree-desc {
-  margin-left: 2%;
-  padding-bottom: 24%;
+#expense-list th.row-item {
+  width: 30%;
+}
+
+#expense-list th:last-child {
+  width: 25%;
+}
+
+.expense-header{
+  color: navy;
+  text-decoration: underline;
+}
+.center-head{
+  text-align: center;
+  color: navy;
+  margin-bottom: 2vh;
 }
 
 /* Prompt CSS */
