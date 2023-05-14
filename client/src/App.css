@@ -1130,6 +1130,12 @@ h4 {
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    overflow: scroll;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   [class*="media"] {
     display: none;
     }
@@ -1159,6 +1165,39 @@ h4 {
 
 @media only screen and (max-width: 900px) {
   .goalR {
+    width: 95%;
+    max-width: none;
+    margin-top: 2vh;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .budget-master {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .budget-main {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .budget-left {
+    width: 95%;
+    max-width: none;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .budget-right {
     width: 95%;
     max-width: none;
     margin-top: 2vh;
