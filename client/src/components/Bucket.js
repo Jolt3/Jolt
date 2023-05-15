@@ -101,10 +101,13 @@ const DoughnutChart = () => {
     const toggleAddBucket = () => {
         setShowAddBucket(!showAddBucket)
     }
+
+    console.log(buckets)
     return (
         <div className="goal-list-main">
             <div className="budgetL">
                 <Doughnut  data={data} options={options} />
+                <p style={{textAlign:'center', marginTop:'5vh', fontSize: '1.4rem', fontWeight: '600'}}>Balance: ${buckets[0].amount}</p>
             </div>
             <div className="budgetR">
                 {buckets.slice(1).map((bucket, index) => (
@@ -135,6 +138,7 @@ const DoughnutChart = () => {
                         <button className="budget-remove goal-button-2" onClick={toggleAddBucket}>Cancel</button>
                     </div>
                 )}
+             
             </div>
         </div>
     )

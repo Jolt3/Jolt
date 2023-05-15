@@ -4,10 +4,14 @@ import Button from "plaid-threads/Button";
 import Context from "./Context";
 import { Products } from "plaid";
 import axios from 'axios'
+import { useMutation } from "@apollo/client";
+import { UPDATE_USER } from "../utils/mutations";
+import auth from "../utils/auth";
 const bank = require('../assets/img/icons8-bank-account-96.png');
 
 const Link = () => {
   const { linkToken, isPaymentInitiation, dispatch } = useContext(Context);
+  const [set_access_token, {data}] = useMutation(UPDATE_USER)
 
   const getTransactions = async () => {
     const getTransactions = await fetch("/api/transactions", {
@@ -70,9 +74,15 @@ const Link = () => {
 
         //Assigns Access Token to DB
         const accessToken = data.access_token;
-        console.log(accessToken)
-        
-        
+
+        const _setAccessToken = async (accessToken:any) => {
+          const {data} = await set_access_token({
+            variables:{
+              access_token: accessToken
+            },
+          });
+        }
+        _setAccessToken(accessToken);
       };
 
       // 'payment_initiation' products do not require the public_token to be exchanged for an access_token.

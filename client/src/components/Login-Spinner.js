@@ -25,6 +25,9 @@ const loginHandler = async () => {
             }
         });
         Auth.login(data.login.token); 
+
+
+        
         const userAlias = data.login.user.username
         const isName = sessionStorage.getItem('username')
         if (isName){
@@ -64,6 +67,9 @@ const registerHandler = async () => {
         });
         console.log(data);
         Auth.register(data.addUser.token)
+
+
+
         const userAlias = data.addUser.user.username
         const isName = sessionStorage.getItem('username')
         if (isName){
