@@ -11,7 +11,7 @@ const bank = require('../assets/img/icons8-bank-account-96.png');
 
 const Link = () => {
   const { linkToken, isPaymentInitiation, dispatch } = useContext(Context);
-  const [set_access_token] = useMutation(UPDATE_USER)
+  const [set_access_token, {data}] = useMutation(UPDATE_USER)
 
   const getTransactions = async () => {
     const getTransactions = await fetch("/api/transactions", {
@@ -74,19 +74,14 @@ const Link = () => {
 
         //Assigns Access Token to DB
         const accessToken = data.access_token;
-        console.log('line 77',accessToken)
-        
-        const _setAccessToken = async (accessToken:string) => {
-          
-          const data = await set_access_token({
+
+        const _setAccessToken = async (accessToken:any) => {
+          const {data} = await set_access_token({
             variables:{
-              accessToken
-            }
+              access_token: accessToken
+            },
           });
-          console.log('data line 85', data);
-          
         }
-        
         _setAccessToken(accessToken);
       };
 

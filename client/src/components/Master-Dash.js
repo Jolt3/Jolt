@@ -52,9 +52,11 @@ export const Master = () => {
           console.error('Error fetching user data:', error);
         }
     }
-
+    
     useEffect( () => {
         getUser()
+        console.log(window
+            )
     }, [])
 
     return (
