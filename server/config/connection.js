@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+require('dotenv').config()
 
 mongoose.connect(
-  process.env.MONGODB_URI,
+  process.env.MONGODB_URI || 'mongodb+srv://christophermbaldock:Saratoga728@cluster0.u7s0hqa.mongodb.net/?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -10,6 +10,3 @@ mongoose.connect(
 );
 
 module.exports = mongoose.connection;
-
-
-//Adds vars to heroku
