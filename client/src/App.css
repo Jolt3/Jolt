@@ -393,6 +393,28 @@ margin-top: 25px;
   opacity: .8;
 }
 
+/* .fade-in-1 {
+  animation: fadeInAnimation ease 3s;
+  -webkit-animation: fadeInAnimation 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+}
+
+@keyframes fadeInAnimation {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+fade-in-2 {
+  animation: fadeIn 2s;
+  -webkit-animation: fadeIn 2s;
+  -moz-animation: 2s;
+  -o-animation: 2s;
+  -ms-animation: 2s;
+  animation-delay: .5s;
+} */
+
 /* login spinner */
 
 .section{
@@ -1099,15 +1121,17 @@ h4 {
 
 .expense-left {
   background-color: whitesmoke;
-  width: 100%;
+  /* width: 100%; */
+  width: 60%;
   height: 98%;
   max-height: 98%;
-  min-height: 98%;
+  /* min-height: 98%; */
   margin-top: 2%;
   margin-left: 2.5%;
-  padding: 3rem;
+  padding: (0 30px);
   margin-right: 2%;
   border-radius: 20px;
+  overflow: scroll;
 }
 
 #expense-list {
@@ -1140,7 +1164,8 @@ h4 {
   text-align: left;
   color: navy;
   margin-bottom: 2vh;
-  margin-left: 10vw;
+  /* margin-left: 1vw; */
+  padding: 5%;
 }
 
 /* Prompt CSS */
@@ -1267,6 +1292,7 @@ h4 {
   .expense-master {
     margin-left: 0%;
     width: 100vh;
+    margin-left: 0;
   }
 }
 
