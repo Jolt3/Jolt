@@ -10,3 +10,6 @@ mongoose.connect(
 );
 
 module.exports = mongoose.connection;
+
+
+//Adds vars to heroku
