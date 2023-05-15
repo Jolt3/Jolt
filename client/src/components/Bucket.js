@@ -112,7 +112,7 @@ const DoughnutChart = () => {
             <div className="budgetR">
                 {buckets.slice(1).map((bucket, index) => (
                     <div style={{textAlign:'left', fontSize:'1.5vw', display:'block', width:'20%', marginBottom:'1%'}} key={index}>
-                        {bucket.name} - {bucket.amount}
+                        {bucket.name} - ${bucket.amount}
                         <button className='goal-button' style={{marginLeft:'5%'}} onClick={() => removeBucket(index + 1)}>Delete</button>
                     </div>
                 ))}
