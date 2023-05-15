@@ -36,7 +36,12 @@
   
   ## Screenshots
   <a name='screenshots'></a>
-  Yes. (Trey can you add gifs?)
+![Account Balance](https://i.makeagif.com/media/5-15-2023/99J5MH.gif)
+![Expense Sheet](https://i.makeagif.com/media/5-15-2023/ygv50C.gif)
+![Login](https://i.makeagif.com/media/5-15-2023/Nbim85.gif)
+![Expense](./client/src/assets/img/jolt-1.png)
+![Plaid](./client/src/assets/img/jolt-2.png)
+
 
   ## Contributions
   <a name= 'contributions'></a>
