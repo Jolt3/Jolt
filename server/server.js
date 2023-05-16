@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 require('dotenv').config();
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
@@ -19,7 +19,7 @@ const APP_PORT = process.env.APP_PORT || 8000;
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
 const PLAID_SECRET = process.env.PLAID_SECRET;
 const PLAID_ENV = process.env.PLAID_ENV || 'sandbox';
-
+console.log(process.env)
 // PLAID_PRODUCTS is a comma-separated list of products to use when initializing
 // Link. Note that this list must contain 'assets' in order for the app to be
 // able to create and retrieve asset reports.
@@ -92,12 +92,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client')));
+  app.use(express.static(path.join(__dirname, '../client/build')));
 }
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
-});
 
 //Gets User Data
 app.get('/api/user/:username', (req, res, next) => {
@@ -520,6 +516,11 @@ app.use('/api', function (error, request, response, next) {
   prettyPrintResponse(error.response);
   response.json(formatError(error.response));
 });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
 
 const prettyPrintResponse = (response) => {
   console.log(util.inspect(response.data, { colors: true, depth: 4 }));
